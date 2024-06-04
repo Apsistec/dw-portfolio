@@ -1,0 +1,7 @@
+{
+  "name": "dw-portfolio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
