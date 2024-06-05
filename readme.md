@@ -29,7 +29,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/apsistec/dw-portfolio">
-    <img src="assets/computer-code.png" alt="Logo" width="80" height="80">
+    <img src="src/assets/computer-code.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">dw-portfolio</h3>
@@ -92,9 +92,9 @@ an Ionic progressive web application.
 
 ### Built With
 
-- [![Angular][angular.dev]](Angular-url)
-- [![Ionic][ionicframework.com]](Ionic-url)
-- [![Firebase][firebase.com]](firebase-url)
+- ![Angular](Angular-url)
+- ![Ionic](Ionic-url)
+- ![Firebase](firebase-url)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -191,9 +191,10 @@ To get a local copy up and running follow these simple example steps.
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Primary functions available in app
 
-_View Resume [Documentation](assets/resume.pdf)_
+- _View and Print Resume [James (Doug)las White Resume](src/assets/resume.pdf)_
+- _Send Message [Sendgrid.com][sendgrid-url]_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -238,7 +239,14 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact and Support
 
-Douglas White - [@apsistec](https://twitter.com/apsistec) - <email@douglaswhite.dev>
+Douglas White
+
+- [@apsistec](https://twitter.com/apsistec)
+
+- <email@douglaswhite.dev>
+
+- [website](https://douglaswhite.app)
+
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 Project Link: [https://github.com/apsistec/dw-portfolio](https://github.com/apsistec/dw-portfolio)
@@ -247,15 +255,15 @@ Project Link: [https://github.com/apsistec/dw-portfolio](https://github.com/apsi
 
 ## Contributors/People
 
-[![**Apsistec**]](https://avatars0.githubusercontent.com/u/6438623?s=400&u=aaaf57f08f5fff530672ecd3a18f26a53f704850&v=4)
+![**Apsistec**][avatar-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-- [Ionic Framework](https://ionicframework.com)
-- [Angular](https://angular.dev)
+- [Ionic Framework][ionic-url]
+- [Angular][angular-url]
 - [Choose an Open Source License](https://choosealicense.com)
 - [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 - [Img Shields](https://shields.io)
@@ -267,6 +275,7 @@ Project Link: [https://github.com/apsistec/dw-portfolio](https://github.com/apsi
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
+[avatar-url]: https://avatars0.githubusercontent.com/u/6438623?s=400&u=aaaf57f08f5fff530672ecd3a18f26a53f704850&v=4
 [angular-url]: https://angular.dev/
 [ionic-url]: https://angular.dev/
 [firebase-url]: https://firebase.com/
@@ -282,3 +291,4 @@ Project Link: [https://github.com/apsistec/dw-portfolio](https://github.com/apsi
 [license-url]: https://github.com/apsistec/dw-portfolio/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/apsistec
+[sendgrid-url]: https://sendgrid.com
