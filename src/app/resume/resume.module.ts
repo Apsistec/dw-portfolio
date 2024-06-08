@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LandingPageRoutingModule } from './landing-routing.module';
+import { ResumePageRoutingModule } from './resume-routing.module';
 
-import { LandingPage } from './landing.page';
+import { ResumePage } from './resume.page';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
@@ -14,9 +15,10 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    LandingPageRoutingModule,
+    ResumePageRoutingModule,
+    NgxExtendedPdfViewerModule,
     SharedModule,
   ],
-  declarations: [LandingPage]
+  declarations: [ResumePage],
 })
-export class LandingPageModule {}
+export class ResumePageModule {}

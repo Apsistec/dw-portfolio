@@ -1,3 +1,23 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-header [translucent]="true" class="header" collapse="fade">
+    <ion-toolbar>
+      <ion-buttons>
+        <ion-icon style="padding: 10px" src="../assets/computer-code.svg" size="large" slot="start" routerLin="/"></ion-icon>
+        <ion-text routerLink="/" class="neon">DouglasWhite.app</ion-text>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-icon size="large" color="warning" name="sunny"></ion-icon>
+    <ion-toggle [(ngModel)]="paletteToggle" (ionChange)="toggleChange($event)" justify="space-between">Dark
+      Mode</ion-toggle>
+        <ion-icon size="large" color="light" name="moon"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content fullscreen="true">
+    <ion-router-outlet></ion-router-outlet>
+    <ion-button *ngIf="pwa.promptEvent" (click)="installPwa()">
+      Install
+    </ion-button>
+  </ion-content>
 </ion-app>
+‰

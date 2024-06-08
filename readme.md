@@ -291,4 +291,4 @@ Project Link: [https://github.com/apsistec/dw-portfolio](https://github.com/apsi
 [license-url]: https://github.com/apsistec/dw-portfolio/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/apsistec
-[sendgrid-url]: https://sendgrid.com
+[sendgrid-url]: https://sendgrid.co
