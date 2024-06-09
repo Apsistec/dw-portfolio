@@ -18,14 +18,14 @@ export class LandingPage implements OnInit {
   constructor(public toastController: ToastController) {}
 
   ngOnInit() {
-    setTimeout(() => {
       this.presentToast();
-    }, 3000);
+
   }
+
   async presentToast() {
     const toast = await this.toastController.create({
       message:
-        "Thank you for your consideration.. This progressive web app (PWA) was built with Ionic 6 and ${name}",
+        "Thank you for your consideration.. This progressive web app (PWA) was built with ${ion} and ${name}",
       duration: 4500,
       header: "Portfolio of Douglas White",
       icon: "information-circle",

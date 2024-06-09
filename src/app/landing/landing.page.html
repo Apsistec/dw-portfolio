@@ -1,22 +1,51 @@
-<ion-content class="content" [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<ion-content
+  class="content"
+  [scrollEvents]="true"
+  (ionScrollEnd)="onScroll($event)"
+>
   <div #landing id="landing">
     <div class="main">
       <div class="display">
         <h1>Douglas White</h1>
         <h2>Web Application Developer</h2>
       </div>
-      <ion-button size="large" shape="round" strong class="ion-text-center ion-margin" (click)="scrollToId('about')">
-        <ion-icon size="small" color="secondary" button name="chevron-down-sharp" class="flipInX"></ion-icon>
+      <ion-button
+        size="large"
+        shape="round"
+        strong
+        class="ion-text-center ion-margin"
+        (click)="scrollToId('about')"
+      >
+        <ion-icon
+          size="small"
+          color="secondary"
+          button
+          name="chevron-down-sharp"
+          class="flipInX"
+        ></ion-icon>
         <ion-text color="tertiary" class="ion-text-uppercase ion-padding">
           Have a look
         </ion-text>
-        <ion-icon size="small" color="secondary" button name="chevron-down-sharp" class="flipInX"></ion-icon>
+        <ion-icon
+          size="small"
+          color="secondary"
+          button
+          name="chevron-down-sharp"
+          class="flipInX"
+        ></ion-icon>
       </ion-button>
     </div>
   </div>
   <ion-grid class="ion-margin-vertical">
     <ion-row id="about" class="ion-justify-content-center ion-margin-vertical">
-      <ion-col size-xs="12" size-sm="12" size-m="6" size-lg="4" size-xl="4" class="ion-align-self-center">
+      <ion-col
+        size-xs="12"
+        size-sm="12"
+        size-m="6"
+        size-lg="4"
+        size-xl="4"
+        class="ion-align-self-center"
+      >
         <ion-card id="about" class="card">
           <ion-card-header class="ion-text-center">
             <ion-card-title lines="none" class="title nameplate-info">
@@ -27,24 +56,55 @@
           <ion-card-content>
             <ion-grid>
               <ion-row class="ion-justify-content-center ion-text-center">
-                <ion-col size-xs="12" size-sm="12" size-md="10" size-lg="8" size-xl="6" class="ion-align-items-center">
-                  <img height="200" width="200" src="../../assets/me.jpg" class="myImage" />
+                <ion-col
+                  size-xs="12"
+                  size-sm="12"
+                  size-md="10"
+                  size-lg="8"
+                  size-xl="6"
+                  class="ion-align-items-center"
+                >
+                  <img
+                    height="200"
+                    width="200"
+                    src="../../assets/me.jpg"
+                    class="myImage"
+                  />
                 </ion-col>
-                <ion-col class="ion-align-self-center" size-xs="12" size-sm="12" size-md="10" size-lg="8" size-xl="8">
+                <ion-col
+                  class="ion-align-self-center"
+                  size-xs="12"
+                  size-sm="12"
+                  size-md="10"
+                  size-lg="8"
+                  size-xl="8"
+                >
                   <ion-item lines="none" class="nameplate-info">
-                    <ion-icon slot="start" color="tertiary" name="call-sharp"></ion-icon>
+                    <ion-icon
+                      slot="start"
+                      color="tertiary"
+                      name="call-sharp"
+                    ></ion-icon>
                     &nbsp;
                     <ion-text class="label">512.293.1045</ion-text>
                   </ion-item>
                   <ion-item lines="none" class="nameplate-info">
-                    <ion-icon slot="start" color="tertiary" name="mail-sharp"></ion-icon>
+                    <ion-icon
+                      slot="start"
+                      color="tertiary"
+                      name="mail-sharp"
+                    ></ion-icon>
                     &nbsp;
                     <ion-text class="label ion-text-lowercase">
                       doug&#64;douglaswhite.app
                     </ion-text>
                   </ion-item>
                   <ion-item lines="none" class="nameplate-info">
-                    <ion-icon slot="start" color="tertiary" name="home-sharp"></ion-icon>
+                    <ion-icon
+                      slot="start"
+                      color="tertiary"
+                      name="home-sharp"
+                    ></ion-icon>
                     &nbsp;
                     <ion-text class="label">Lubbock TX</ion-text>
                   </ion-item>
@@ -60,7 +120,14 @@
     </ion-row>
 
     <ion-row id="tech" class="ion-justify-content-center">
-      <ion-col size-xs="12" size-sm="12" size-md="10" size-lg="8" size-xl="8" class="ion-align-self-stretch">
+      <ion-col
+        size-xs="12"
+        size-sm="12"
+        size-md="10"
+        size-lg="8"
+        size-xl="8"
+        class="ion-align-self-stretch"
+      >
         <ion-card class="card ion-text-center">
           <ion-card-header>
             <ion-card-title class="title">
@@ -70,16 +137,19 @@
               Skills & Tech Stack
             </ion-card-subtitle>
           </ion-card-header>
-          <ion-card-content>
-
-
-          </ion-card-content>
+          <ion-card-content> </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
-    <ion-fab-button id="up" [hidden]="!showBackToTopFab" class="up" size="small" (click)="scrollToTop()">
+    <ion-fab-button
+      id="up"
+      [hidden]="!showBackToTopFab"
+      class="up"
+      size="small"
+      (click)="scrollToTop()"
+    >
       <ion-icon size="small" name="chevron-up-sharp"></ion-icon>
     </ion-fab-button>
   </ion-fab>

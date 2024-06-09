@@ -1,8 +1,8 @@
 {
   "name": "dw-portfolio",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Douglas White <email@douglaswhite.dev>",
+  "homepage": "https://douglaswhite.app/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -32,7 +32,7 @@
     "@capacitor/status-bar": "6.0.0",
     "@ionic/angular": "^8.2.1",
     "@ionic/angular-server": "^8.2.1",
-    "@ionic/cli": "^7.2.0",
+    "@ionic/core": "^8.2.1",
     "firebase": "^10.12.2",
     "ionicons": "^7.0.0",
     "ngx-extended-pdf-viewer": "^20.5.0-alpha.2",
@@ -66,15 +66,15 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.4.5"
+    "typescript": "~5.4.0"
   },
-  "description": "An Ionic project",
+  "description": "My portfolio app",
   "browserslist": [
-    "Chrome >=79",
-    "ChromeAndroid >=79",
-    "Firefox >=70",
-    "Edge >=79",
-    "Safari >=14",
-    "iOS >=14"
+    "Chrome >=89",
+    "ChromeAndroid >=89",
+    "Firefox >=75",
+    "Edge >=89",
+    "Safari >=15",
+    "iOS >=15"
   ]
 }

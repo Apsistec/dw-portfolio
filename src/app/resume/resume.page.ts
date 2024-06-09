@@ -10,6 +10,7 @@ export class ResumePage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    return
   }
 
 }

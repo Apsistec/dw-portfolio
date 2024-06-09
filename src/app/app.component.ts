@@ -5,6 +5,7 @@ import {
   OnInit,
 } from "@angular/core";
 import { PwaService } from "./services/pwa.service";
+import { ActivatedRoute } from "@angular/router";
 @Component({
   selector: "app-root",
   templateUrl: "app.component.html",
@@ -12,14 +13,16 @@ import { PwaService } from "./services/pwa.service";
 })
 export class AppComponent implements OnInit {
   paletteToggle = false;
+  currentRoute: string | unknown;
 
-  constructor(public pwa: PwaService) {}
+  constructor(public pwa: PwaService, private activatedRoute: ActivatedRoute) {}
 
   installPwa(): void {
     this.pwa.promptEvent.prompt();
   }
 
   ngOnInit() {
+    this.currentRoute = this.activatedRoute.snapshot?.routeConfig?.title ?? null; 
     // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -40,7 +43,7 @@ export class AppComponent implements OnInit {
   }
 
   // Listen for the toggle check/uncheck to toggle the dark palette
-  toggleChange(ev: { detail: { checked: any; }; }) {
+  toggleChange(ev: { detail: { checked: any } }) {
     this.toggleDarkPalette(ev.detail.checked);
   }
 

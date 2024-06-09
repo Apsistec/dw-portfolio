@@ -4,14 +4,9 @@ import { TabsPage } from "./tabs.page";
 
 const routes: Routes = [
   {
-    path: "tabs",
+    path: "",
     component: TabsPage,
     children: [
-      {
-        path: "landing",
-        loadChildren: () =>
-          import("../landing/landing.module").then((m) => m.LandingPageModule),
-      },
       {
         path: "resume",
         loadChildren: () =>
@@ -24,15 +19,10 @@ const routes: Routes = [
       },
       {
         path: "",
-        redirectTo: "tabs/landing",
-        pathMatch: "full",
+        loadChildren: () =>
+          import("../landing/landing.module").then((m) => m.LandingPageModule),
       },
     ],
-  },
-  {
-    path: "",
-    redirectTo: "/tabs/landing",
-    pathMatch: "full",
   },
 ];
 
