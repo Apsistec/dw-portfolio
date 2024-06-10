@@ -71,10 +71,11 @@ exports.genericEmail = onCall(
         from: request.data.email,
         templateId: templateId.value(),
         dynamic_template_data: {
-          subject: "Job Opportunity",
+          subject: "Portfolio Contact",
           name: request.data.name,
           email: request.data.email,
           message: request.data.message,
+          preheader: "A new message from douglaswhite.app",
         },
       };
       await sgMail.send(msg);

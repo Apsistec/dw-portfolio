@@ -9,14 +9,16 @@
         size="large"
         slot="start"
         routerLink="/"
+        style="padding-left: 20px"
       ></ion-icon>
       <ion-title> DouglasWhite.app </ion-title>
       <ion-buttons slot="end">
         <ion-icon size="large" color="warning" name="sunny"></ion-icon>
-        <ion-toggle (ionChange)="toggleChange($event)" justify="space-between"
-          ></ion-toggle
-        >
-        <ion-icon size="large" color="light" name="moon"></ion-icon>
+        <ion-toggle
+        (ionChange)="toggleChange($event)"
+        checked="palletToggle"
+        ></ion-toggle>
+        <ion-icon size="large" name="moon"></ion-icon>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>

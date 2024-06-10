@@ -1,7 +1,7 @@
 <ion-content
   class="content"
   [scrollEvents]="true"
-  (ionScrollEnd)="onScroll($event)"
+  (ionScroll)="onScrollEnd($event)"
 >
   <div #landing id="landing">
     <div class="main">
@@ -144,6 +144,7 @@
   </ion-grid>
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
     <ion-fab-button
+      *ngIf="scrollEnd"
       id="up"
       [hidden]="!showBackToTopFab"
       class="up"

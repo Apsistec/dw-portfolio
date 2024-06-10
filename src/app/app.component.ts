@@ -3,26 +3,35 @@ import {
   ApplicationRef,
   Component,
   OnInit,
+  VERSION,
 } from "@angular/core";
 import { PwaService } from "./services/pwa.service";
 import { ActivatedRoute } from "@angular/router";
+import { ToastController } from "@ionic/angular";
 @Component({
   selector: "app-root",
   templateUrl: "app.component.html",
   styleUrls: ["app.component.scss"],
 })
 export class AppComponent implements OnInit {
+  angular = "Angular " + VERSION.major;
+  ion: string = "Ionic " + 8;
   paletteToggle = false;
   currentRoute: string | unknown;
 
-  constructor(public pwa: PwaService, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    public pwa: PwaService,
+    private activatedRoute: ActivatedRoute,
+    public toastController: ToastController
+  ) {}
 
   installPwa(): void {
     this.pwa.promptEvent.prompt();
   }
 
   ngOnInit() {
-    this.currentRoute = this.activatedRoute.snapshot?.routeConfig?.title ?? null; 
+    this.currentRoute =
+      this.activatedRoute.snapshot?.routeConfig?.title ?? null;
     // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -34,6 +43,25 @@ export class AppComponent implements OnInit {
     prefersDark.addEventListener("change", (mediaQuery) =>
       this.initializeDarkPalette(mediaQuery.matches)
     );
+
+    this.presentToast();
+  }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      header: `My portfolio as a cross platform PWA built with ${this.ion} & ${this.angular}`,
+      message: `Thank you for stopping by. Be sure to see my resume and send me a message to let me know you were here.`,
+      icon: "../../assets/computer-code.svg",
+      position: "middle",
+      color: "success",
+      buttons: [
+        {
+          text: "Dismiss",
+          role: "cancel",
+        },
+      ],
+    });
+    await toast.present();
   }
 
   // Check/uncheck the toggle and update the palette based on isDark

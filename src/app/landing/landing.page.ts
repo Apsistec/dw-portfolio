@@ -7,35 +7,20 @@ import { Observable, map } from "rxjs";
   templateUrl: "./landing.page.html",
   styleUrls: ["./landing.page.scss"],
 })
-export class LandingPage implements OnInit {
-  name = "Angular" + VERSION.major;
-  ion: string = "Ionic" + IonApp;
+export class LandingPage{
+
   showBackToTopFab = false;
 
   @ViewChild(IonContent, { static: false })
   content!: IonContent;
+  scrollEnd = false;
 
-  constructor(public toastController: ToastController) {}
+  constructor() {}
 
-  ngOnInit() {
-      this.presentToast();
 
-  }
 
-  async presentToast() {
-    const toast = await this.toastController.create({
-      message:
-        "Thank you for your consideration.. This progressive web app (PWA) was built with ${ion} and ${name}",
-      duration: 4500,
-      header: "Portfolio of Douglas White",
-      icon: "information-circle",
-      position: "top",
-      color: "primary",
-    });
-    await toast.present();
-  }
-
-  onScroll(ev: Event) {
+  onScrollEnd(ev: Event) {
+    this.scrollEnd = true;
     this.showBackToTopFab =
       (<CustomEvent>ev).detail.scrollTop > 200 ? true : false;
   }
@@ -46,6 +31,8 @@ export class LandingPage implements OnInit {
   }
 
   scrollToTop() {
-    this.content.scrollToTop(750);
+    this.content.scrollToTop(750).then(() => {
+      this.scrollEnd = false;
+    })
   }
 }
