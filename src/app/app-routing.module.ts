@@ -1,55 +1,53 @@
-import { NgModule } from "@angular/core";
-import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
-import { TabsComponent } from "./tabs/tabs.component";
+import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { TabsComponent } from './tabs/tabs.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: TabsComponent,
     children: [
       {
-        path: "home",
+        path: 'home',
         children: [
           {
-            path: "",
+            path: '',
             loadChildren: () =>
-              import("./home/home.module").then((m) => m.HomePageModule),
+              import('./home/home.module').then(m => m.HomePageModule),
           },
         ],
       },
 
       {
-        path: "resume",
+        path: 'resume',
         children: [
           {
-            path: "",
+            path: '',
             loadChildren: () =>
-              import("./resume/resume.module").then((m) => m.ResumePageModule),
+              import('./resume/resume.module').then(m => m.ResumePageModule),
           },
         ],
       },
       {
-        path: "contact",
+        path: 'contact',
         children: [
           {
-            path: "",
+            path: '',
             loadChildren: () =>
-              import("./contact/contact.module").then(
-                (m) => m.ContactPageModule
-              ),
+              import('./contact/contact.module').then(m => m.ContactPageModule),
           },
         ],
       },
       {
-        path: "",
-        redirectTo: "/home",
-        pathMatch: "full",
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full',
       },
     ],
   },
   {
-    path: "**",
-    redirectTo: "home",
+    path: '**',
+    redirectTo: 'home',
   },
 ];
 @NgModule({

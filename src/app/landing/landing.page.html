@@ -12,27 +12,13 @@
       <ion-button
         size="large"
         shape="round"
+        color="tertiary"
         strong
-        class="ion-text-center ion-margin"
         (click)="scrollToId('about')"
       >
-        <ion-icon
-          size="small"
-          color="secondary"
-          button
-          name="chevron-down-sharp"
-          class="flipInX"
-        ></ion-icon>
-        <ion-text color="tertiary" class="ion-text-uppercase ion-padding">
-          Have a look
+        <ion-text class="ion-text-uppercase ion-padding">
+          View More
         </ion-text>
-        <ion-icon
-          size="small"
-          color="secondary"
-          button
-          name="chevron-down-sharp"
-          class="flipInX"
-        ></ion-icon>
       </ion-button>
     </div>
   </div>
@@ -69,6 +55,7 @@
                     width="200"
                     src="../../assets/me.jpg"
                     class="myImage"
+                    alt="my picture"
                   />
                 </ion-col>
                 <ion-col
@@ -96,7 +83,7 @@
                     ></ion-icon>
                     &nbsp;
                     <ion-text class="label ion-text-lowercase">
-                      doug&#64;douglaswhite.app
+                      email&#64;douglaswhite.dev
                     </ion-text>
                   </ion-item>
                   <ion-item lines="none" class="nameplate-info">
@@ -150,8 +137,9 @@
       class="up"
       size="small"
       (click)="scrollToTop()"
+      color="tertiary"
     >
-      <ion-icon size="small" name="chevron-up-sharp"></ion-icon>
+      <ion-icon slot="icon-only" size="small" name="chevron-up"></ion-icon>
     </ion-fab-button>
   </ion-fab>
   <app-footer class="footer"></app-footer>

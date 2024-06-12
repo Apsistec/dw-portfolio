@@ -6,8 +6,8 @@ import { ResumePage } from './resume.page';
 const routes: Routes = [
   {
     path: '',
-    component: ResumePage
-  }
+    component: ResumePage,
+  },
 ];
 
 @NgModule({

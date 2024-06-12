@@ -1,11 +1,11 @@
-import { Component, OnInit, VERSION, ViewChild } from "@angular/core";
-import { IonApp, IonContent, ToastController } from "@ionic/angular";
-import { Observable, map } from "rxjs";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Component, ViewChild } from '@angular/core';
+import { IonContent } from '@ionic/angular';
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.page.html",
-  styleUrls: ["./home.page.scss"],
+  selector: 'app-home',
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
   showBackToTopFab = false;
@@ -14,12 +14,10 @@ export class HomePage {
   content!: IonContent;
   scrollEnd = false;
 
-  constructor() {}
-
   onScrollEnd(ev: Event) {
     this.scrollEnd = true;
     this.showBackToTopFab =
-      (<CustomEvent>ev).detail.scrollTop > 200 ? true : false;
+      (ev as CustomEvent).detail.scrollTop > 200 ? true : false;
   }
 
   scrollToId(id: any) {

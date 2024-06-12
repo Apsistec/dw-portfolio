@@ -6,10 +6,9 @@ interface MyData {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
-
   private dataSubject = new BehaviorSubject<MyData | null>(null);
   data$ = this.dataSubject.asObservable();
 

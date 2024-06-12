@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Injectable } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 import { ToastController } from '@ionic/angular';
@@ -9,7 +11,10 @@ export class PwaService {
   promptEvent: any;
   deferredPrompt: any;
 
-  constructor(private swUpdate: SwUpdate, public toast: ToastController) {}
+  constructor(
+    private swUpdate: SwUpdate,
+    public toast: ToastController
+  ) {}
 
   async updateSW() {
     if (this.swUpdate.isEnabled) {
@@ -40,11 +45,11 @@ export class PwaService {
   }
 
   ionViewWillEnter() {
-    window.addEventListener('beforeinstallprompt', (e) => {
+    window.addEventListener('beforeinstallprompt', e => {
       this.promptEvent = event;
     });
 
-    window.addEventListener('appinstalled', (event) => {
+    window.addEventListener('appinstalled', event => {
       alert('installed');
     });
 
@@ -54,6 +59,7 @@ export class PwaService {
   }
 
   add_to_home(e: any) {
+    // eslint-disable-next-line no-debugger
     debugger;
     // hide our user interface that shows our button
     // Show the prompt

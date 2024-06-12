@@ -9,7 +9,6 @@ import { ResumePageRoutingModule } from './resume-routing.module';
 import { ResumePage } from './resume.page';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { SharedModule } from '../shared/shared.module';
-import { ExamplePdfViewerComponent } from '../example-pdf-viewer/example-pdf-viewer.component';
 
 @NgModule({
   imports: [
@@ -20,6 +19,6 @@ import { ExamplePdfViewerComponent } from '../example-pdf-viewer/example-pdf-vie
     NgxExtendedPdfViewerModule,
     SharedModule,
   ],
-  declarations: [ResumePage, ExamplePdfViewerComponent],
+  declarations: [ResumePage],
 })
 export class ResumePageModule {}

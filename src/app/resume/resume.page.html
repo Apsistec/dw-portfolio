@@ -1,30 +1,5 @@
-<ion-content >
-  <!-- <ion-header
-    ><ion-toolbar><ion-title>Resume</ion-title></ion-toolbar></ion-header
-  > -->
-  <!-- <ion-grid>
-    <ion-row>
-      <ion-col> -->
-        <!-- <ngx-extended-pdf-viewer
-          [src]="'assets/resume.pdf'"
-          [height]="'auto'"
-          zoom="30%"
-          [showBorders]="false"
-          [scrollMode]="0"
-          [showBorders]="false"
-          [textLayer]="true"
-          [showHandToolButton]="true"
-          [theme]="'dark'"
-        >
-        </ngx-extended-pdf-viewer> -->
-      <!-- </ion-col>
-    </ion-row> -->
-    <!-- <ion-row>
-      <ion-col> -->
-        <!-- <app-footer class="footer"></app-footer> -->
-      <!-- </ion-col>
-    </ion-row> -->
-  <!-- </ion-grid> -->
-
-  <app-example-pdf-viewer></app-example-pdf-viewer>
+<ion-content>
+  <!-- <app-example-pdf-viewer></app-example-pdf-viewer> -->
+  <ngx-extended-pdf-viewer [src]="'../../assets/pdfs/resume.pdf'" [showDownloadButton]="true" backgroundColor="111111" [theme]=theme>
+  </ngx-extended-pdf-viewer>
 </ion-content>

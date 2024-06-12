@@ -1,46 +1,76 @@
 {
+  "name": "Douglas' Portfolio PWA",
+  "short_name": "My Portfolio PWA",
+  "theme_color": "#00435e",
+  "id": "/",
+  "categories": ["portfolio", "recruiting"],
+  "description": "An interactive portfolio PWA showcasing my skills and experience with the latest web technologies.",
+  "background_color": "#111111",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "orientation": "portrait-primary",
+  "screenshots": [
+  {
+    "src": "assets/rankfantasysports.png", 
+    "sizes": "1280x720",  
+    "type": "image/png", 
+    "purpose": "any",
+    "form_factor": "wide"  
+  }
+],
   "icons": [
     {
       "src": "assets/icons/icon-48.webp",
-      "type": "image/png",
+      "type": "image/webp",
       "sizes": "48x48",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     },
     {
       "src": "assets/icons/icon-72.webp",
-      "type": "image/png",
+      "type": "image/webp",
       "sizes": "72x72",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     },
     {
       "src": "assets/icons/icon-96.webp",
-      "type": "image/png",
+      "type": "image/webp",
       "sizes": "96x96",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     },
     {
       "src": "assets/icons/icon-128.webp",
-      "type": "image/png",
+      "type": "image/webp",
       "sizes": "128x128",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     },
     {
       "src": "assets/icons/icon-192.webp",
-      "type": "image/png",
+      "type": "image/webp",
       "sizes": "192x192",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     },
     {
       "src": "assets/icons/icon-256.webp",
-      "type": "image/png",
+      "type": "image/webp",
       "sizes": "256x256",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     },
     {
       "src": "assets/icons/icon-512.webp",
-      "type": "image/png",
+      "type": "image/webp",
       "sizes": "512x512",
-      "purpose": "any maskable"
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "View my resume",
+      "url": "/resume"
+    },
+    {
+      "name": "Contact me",
+      "url": "/contact"
     }
   ]
 }

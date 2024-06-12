@@ -18,6 +18,6 @@ import { SharedModule } from '../shared/shared.module';
     ContactPageRoutingModule,
     SharedModule,
   ],
-  declarations: [ContactPage]
+  declarations: [ContactPage],
 })
 export class ContactPageModule {}

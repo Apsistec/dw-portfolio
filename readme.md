@@ -35,7 +35,7 @@
   <h3 align="center">dw-portfolio</h3>
 
   <p align="center">
-    A progressive web app showcasing my web development skills.
+    An interactive portfolio PWA showcasing my skills and experience with the latest web technologies. Visitors can explore my past projects, gaining insights into my capabilities in areas like Angular, Ionic, Firebase, and GCP. The PWA design ensures a seamless and performant experience across any device, even when offline.
     <br />
     <a href="https://github.com/apsistec/dw-portfolio"><strong>Explore the docs »</strong></a>
     <br />

@@ -4,20 +4,12 @@
       <ion-buttons slot="start" *ngIf="currentRoute === 'landing'">
         <ion-back-button default-href="#"></ion-back-button>
       </ion-buttons>
-      <ion-icon
-        src="../assets/computer-code.svg"
-        size="large"
-        slot="start"
-        routerLink="/"
-        style="padding-left: 20px"
-      ></ion-icon>
+      <ion-icon src="../assets/computer-code.svg" size="large" slot="start" routerLink="/"
+        style="padding-left: 20px"></ion-icon>
       <ion-title> DouglasWhite.app </ion-title>
       <ion-buttons slot="end">
         <ion-icon size="large" color="warning" name="sunny"></ion-icon>
-        <ion-toggle
-        (ionChange)="toggleChange($event)"
-        checked="palletToggle"
-        ></ion-toggle>
+        <ion-toggle (ionChange)="toggleChange($event)" checked="palletToggle"></ion-toggle>
         <ion-icon size="large" name="moon"></ion-icon>
       </ion-buttons>
     </ion-toolbar>

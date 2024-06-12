@@ -17,6 +17,6 @@ import { SharedModule } from '../shared/shared.module';
     LandingPageRoutingModule,
     SharedModule,
   ],
-  declarations: [LandingPage]
+  declarations: [LandingPage],
 })
 export class LandingPageModule {}
