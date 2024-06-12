@@ -3,11 +3,13 @@ import {
   ApplicationRef,
   Component,
   OnInit,
+  signal,
   VERSION,
 } from "@angular/core";
 import { PwaService } from "./services/pwa.service";
 import { ActivatedRoute } from "@angular/router";
 import { ToastController } from "@ionic/angular";
+import { DataService } from "./services/data.service";
 @Component({
   selector: "app-root",
   templateUrl: "app.component.html",
@@ -16,13 +18,16 @@ import { ToastController } from "@ionic/angular";
 export class AppComponent implements OnInit {
   angular = "Angular " + VERSION.major;
   ion: string = "Ionic " + 8;
-  paletteToggle = false;
+  paletteToggle: boolean | undefined;
+  isDark: boolean | undefined;
   currentRoute: string | unknown;
+  playToast = signal(true);
 
   constructor(
     public pwa: PwaService,
     private activatedRoute: ActivatedRoute,
-    public toastController: ToastController
+    public toastController: ToastController,
+    private dataService: DataService
   ) {}
 
   installPwa(): void {
@@ -44,29 +49,40 @@ export class AppComponent implements OnInit {
       this.initializeDarkPalette(mediaQuery.matches)
     );
 
+    this.dataService.data$.subscribe((data) => {
+      this.paletteToggle = data?.isDark;
+    });
+
     this.presentToast();
   }
 
   async presentToast() {
-    const toast = await this.toastController.create({
-      header: `My portfolio as a cross platform PWA built with ${this.ion} & ${this.angular}`,
-      message: `Thank you for stopping by. Be sure to see my resume and send me a message to let me know you were here.`,
-      icon: "../../assets/computer-code.svg",
-      position: "middle",
-      color: "success",
-      buttons: [
-        {
-          text: "Dismiss",
-          role: "cancel",
-        },
-      ],
-    });
-    await toast.present();
+    if (this.playToast() == true) {
+      return;
+    } else {
+      const toast = await this.toastController.create({
+        header: `My portfolio as a cross platform PWA built with ${this.ion} & ${this.angular}`,
+        message: `Thank you for stopping by. Be sure to see my resume and send me a message to let me know you were here.`,
+        icon: "../../assets/computer-code.svg",
+        position: "middle",
+        color: "success",
+        buttons: [
+          {
+            text: "Dismiss",
+            role: "cancel",
+          },
+        ],
+      });
+      await toast.present().then(() => {
+        this.playToast.set(false);
+      });
+    }
   }
 
   // Check/uncheck the toggle and update the palette based on isDark
   initializeDarkPalette(isDark: boolean) {
-    this.paletteToggle = isDark;
+    const newData: any = { isDark };
+    this.dataService.setData(newData);
     this.toggleDarkPalette(isDark);
   }
 

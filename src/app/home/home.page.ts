@@ -3,11 +3,11 @@ import { IonApp, IonContent, ToastController } from "@ionic/angular";
 import { Observable, map } from "rxjs";
 
 @Component({
-  selector: "app-landing",
-  templateUrl: "./landing.page.html",
-  styleUrls: ["./landing.page.scss"],
+  selector: "app-home",
+  templateUrl: "./home.page.html",
+  styleUrls: ["./home.page.scss"],
 })
-export class LandingPage {
+export class HomePage {
   showBackToTopFab = false;
 
   @ViewChild(IonContent, { static: false })

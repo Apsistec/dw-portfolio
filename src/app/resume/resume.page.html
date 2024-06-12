@@ -1,31 +1,30 @@
-<ion-content class="content ion-text-center display">
-  <ion-header
+<ion-content >
+  <!-- <ion-header
     ><ion-toolbar><ion-title>Resume</ion-title></ion-toolbar></ion-header
-  >
-  <ion-grid>
+  > -->
+  <!-- <ion-grid>
     <ion-row>
-      <ion-col>
-        <ngx-extended-pdf-viewer
-          class="pdf-viewer"
-          [src]="'../../assets/resume.pdf'"
-          filenameForDownload="Douglas_White_Resume"
-          height="95vh"
-          zoom="auto"
-          [showBorders]="true"
-          [showPropertiesButton]="true"
-          [showPagingButtons]="true"
-          [showSecondaryToolbarButton]="false"
-          [showSidebarButton]="false"
-          [showRotateButton]="false"
-          backgroundColor="#313131"
+      <ion-col> -->
+        <!-- <ngx-extended-pdf-viewer
+          [src]="'assets/resume.pdf'"
+          [height]="'auto'"
+          zoom="30%"
+          [showBorders]="false"
+          [scrollMode]="0"
+          [showBorders]="false"
+          [textLayer]="true"
+          [showHandToolButton]="true"
+          [theme]="'dark'"
         >
-        </ngx-extended-pdf-viewer>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <app-footer class="footer"></app-footer>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+        </ngx-extended-pdf-viewer> -->
+      <!-- </ion-col>
+    </ion-row> -->
+    <!-- <ion-row>
+      <ion-col> -->
+        <!-- <app-footer class="footer"></app-footer> -->
+      <!-- </ion-col>
+    </ion-row> -->
+  <!-- </ion-grid> -->
+
+  <app-example-pdf-viewer></app-example-pdf-viewer>
 </ion-content>

@@ -29,7 +29,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/apsistec/dw-portfolio">
-    <img src="src/assets/computer-code.png" alt="Logo" width="80" height="80">
+    <img src="src/assets/computer-code.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">dw-portfolio</h3>

@@ -13,3 +13,24 @@
     "src"
   ]
 }
+
+// {
+//   "compilerOptions": {
+//     "target": "es2017", // Adjust based on your Node.js version and target environment
+//     "module": "commonjs", // Functions run in a CommonJS environment
+//     "lib": ["es2017", "dom"], // Include necessary libraries
+//     "allowJs": true, // Allow compiling JavaScript files (might be needed for some dependencies)
+//     "skipLibCheck": true, // Skip type checking for library files (optional)
+//     "sourceMap": true, // Generate source maps for debugging
+//     "strict": true, // Enable strict mode for type safety (optional)
+//     "esModuleInterop": true, // Allow for interop with ES modules (optional)
+//     "forceConsistentCasingInFileNames": true, // Enforce consistent file name casing (optional)
+//     "resolveJsonModule": true, // Allow importing JSON files as modules (optional)
+//     "declaration": false, // Don't generate type declaration files (not needed for functions)
+//     "outDir": "./lib", // Output compiled code to the "lib" folder (optional)
+//     "noUnusedLocals": true,
+//     "noImplicitReturns": true,
+//   },
+//   "include": ["src"], // Include source code from the "src" folder
+//   "compileOnSave": true
+// }
