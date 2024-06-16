@@ -1,16 +1,16 @@
 <ion-app>
   <ion-header [translucent]="true" class="header" collapse="fade">
     <ion-toolbar>
-      <ion-buttons slot="start" *ngIf="currentRoute === 'landing'">
+      <ion-buttons slot="start" *ngIf="currentRoute !== 'Home'">
         <ion-back-button default-href="#"></ion-back-button>
       </ion-buttons>
-      <ion-icon src="../assets/computer-code.svg" size="large" slot="start" routerLink="/"
-        style="padding-left: 20px"></ion-icon>
+      <ion-img src="../assets/computer-code.png" alt="computer"  slot="start" routerLink="/"
+        style="padding-left: 10px; height: 48px;"></ion-img>
       <ion-title> DouglasWhite.app </ion-title>
       <ion-buttons slot="end">
-        <ion-icon size="large" color="warning" name="sunny"></ion-icon>
-        <ion-toggle (ionChange)="toggleChange($event)" checked="palletToggle"></ion-toggle>
-        <ion-icon size="large" name="moon"></ion-icon>
+        <ion-icon color="warning" name="sunny"></ion-icon>
+        <ion-toggle (ionChange)="toggleChange($event)" checked="palletToggle" style="padding-inline: 5px;"></ion-toggle>
+        <ion-icon style="padding-right: 10px" name="moon"></ion-icon>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>

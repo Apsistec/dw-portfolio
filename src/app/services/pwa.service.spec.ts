@@ -1,8 +1,8 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import { PwaService } from './pwa.service';
+import { PwaService } from "./pwa.service";
 
-describe('PwaService', () => {
+describe("PwaService", () => {
   let service: PwaService;
 
   beforeEach(() => {
@@ -10,7 +10,7 @@ describe('PwaService', () => {
     service = TestBed.inject(PwaService);
   });
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(service).toBeTruthy();
   });
 });

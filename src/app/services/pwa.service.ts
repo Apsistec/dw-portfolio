@@ -1,11 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { Injectable } from '@angular/core';
-import { SwUpdate } from '@angular/service-worker';
-import { ToastController } from '@ionic/angular';
+import { Injectable } from "@angular/core";
+import { SwUpdate } from "@angular/service-worker";
+import { ToastController } from "@ionic/angular";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class PwaService {
   promptEvent: any;
@@ -13,7 +11,7 @@ export class PwaService {
 
   constructor(
     private swUpdate: SwUpdate,
-    public toast: ToastController
+    public toast: ToastController,
   ) {}
 
   async updateSW() {
@@ -23,18 +21,18 @@ export class PwaService {
         const updated = await this.swUpdate.activateUpdate();
         if (updated) {
           const toaster = await this.toast.create({
-            header: 'Update Successful',
+            header: "Update Successful",
             message:
-              'The update has been installed and the app is ready for use.',
-            color: 'success',
-            position: 'middle',
+              "The update has been installed and the app is ready for use.",
+            color: "success",
+            position: "middle",
             duration: 3000,
-            icon: 'information-circle-sharp',
+            icon: "information-circle-sharp",
             buttons: [
               {
-                side: 'end',
-                text: 'Close',
-                role: 'cancel',
+                side: "end",
+                text: "Close",
+                role: "cancel",
               },
             ],
           });
@@ -45,16 +43,16 @@ export class PwaService {
   }
 
   ionViewWillEnter() {
-    window.addEventListener('beforeinstallprompt', e => {
+    window.addEventListener("beforeinstallprompt", (e) => {
       this.promptEvent = event;
     });
 
-    window.addEventListener('appinstalled', event => {
-      alert('installed');
+    window.addEventListener("appinstalled", (event) => {
+      alert("installed");
     });
 
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-      alert('display-mode is standalone');
+    if (window.matchMedia("(display-mode: standalone)").matches) {
+      alert("display-mode is standalone");
     }
   }
 
@@ -66,10 +64,10 @@ export class PwaService {
     this.deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
     this.deferredPrompt.userChoice.then((choiceResult: { outcome: string }) => {
-      if (choiceResult.outcome === 'accepted') {
-        alert('User accepted the prompt');
+      if (choiceResult.outcome === "accepted") {
+        alert("User accepted the prompt");
       } else {
-        alert('User dismissed the prompt');
+        alert("User dismissed the prompt");
       }
       this.deferredPrompt = null;
     });
