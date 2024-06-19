@@ -59,8 +59,8 @@
     </ion-row>
 
     <ion-row id="tech" class="ion-justify-content-center">
-      <ion-col size-xs="12" size-sm="12" size-md="10" size-lg="8" size-xl="8" class="ion-align-self-stretch">
-        <ion-card class="card ion-text-center">
+      <ion-col size-xs="12" size-sm="12" size-md="10" size-lg="8" size-xl="8" >
+        <ion-card class="ion-text-center">
           <ion-card-header>
             <ion-card-title class="title">
               Relevant Information
@@ -70,14 +70,21 @@
             </ion-card-subtitle>
           </ion-card-header>
           <ion-card-content> 
-            <div echarts [options]="options" class="demo-chart"></div>
-
+            
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="4" >
+        <ion-card >
+         <app-skills></app-skills>
+        </ion-card>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="4" >
+        <ion-card >
+         <app-gauges></app-gauges>
+        </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>

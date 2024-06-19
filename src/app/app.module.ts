@@ -12,7 +12,7 @@ import { NgxExtendedPdfViewerModule } from "ngx-extended-pdf-viewer";
 import { environment } from "src/environments/environment";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireFunctionsModule } from "@angular/fire/compat/functions";
-import { NgxEchartsDirective, NgxEchartsModule, provideEcharts } from "ngx-echarts";
+import { NgxEchartsModule, provideEcharts } from "ngx-echarts";
 @NgModule({
   declarations: [AppComponent, TabsComponent],
   imports: [

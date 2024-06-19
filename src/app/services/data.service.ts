@@ -15,4 +15,18 @@ export class DataService {
   setData(newData: MyData) {
     this.dataSubject.next(newData);
   }
+
+  getIsDark() {
+    return this.data$.subscribe(data => {
+      if (data) {
+        if (data.isDark) {
+          return 'dark'
+        } else {
+          return 'light'
+        }
+      } else {
+        return undefined
+      }
+    })
+  }
 }

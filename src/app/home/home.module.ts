@@ -8,6 +8,9 @@ import { HomePage } from "./home.page";
 import { SharedModule } from "../shared/shared.module";
 import { HomePageRoutingModule } from "./home-routing.module";
 import { NgxEchartsModule } from "ngx-echarts";
+import { SkillsComponent } from "../components/skills/skills.component";
+import { NgApexchartsModule } from "ng-apexcharts";
+import { GaugesComponent } from "../components/gauges/gauges.component";
 
 @NgModule({
   imports: [
@@ -16,8 +19,9 @@ import { NgxEchartsModule } from "ngx-echarts";
     IonicModule,
     SharedModule,
     HomePageRoutingModule,
-    NgxEchartsModule
+    NgxEchartsModule,
+    NgApexchartsModule
   ],
-  declarations: [HomePage],
+  declarations: [HomePage, SkillsComponent, GaugesComponent],
 })
 export class HomePageModule { }
