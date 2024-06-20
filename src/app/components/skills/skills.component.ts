@@ -1,18 +1,6 @@
-import { Component, ViewChild } from "@angular/core";
-import {
-  ApexChart,
-  ApexAxisChartSeries,
-  ChartComponent,
-  ApexDataLabels,
-  ApexPlotOptions,
-  ApexYAxis,
-  ApexLegend,
-  ApexStates,
-  ApexGrid,
-  ApexTitleSubtitle
-} from "ng-apexcharts";
+import { Component, OnInit } from "@angular/core";
 import { arrayData } from "./data-series";
-import { style } from "@angular/animations";
+import { ThemeService } from "src/app/services/theme/theme.service";
 
 type ApexXAxis = {
   type?: "category" | "datetime" | "numeric";
@@ -32,7 +20,7 @@ var colors = [
   "#FF4560",
   "#775DD0",
   "#00D9E9",
-  "#FF66C3"
+  "#FF66C3",
 ];
 
 export type ChartOptions = {
@@ -62,39 +50,39 @@ declare global {
 window.Apex = {
   chart: {
     toolbar: {
-      show: false
-    }
+      show: false,
+    },
   },
   tooltip: {
-    shared: false
+    shared: false,
   },
   legend: {
-    show: false
-  }
+    show: false,
+  },
 };
 
 @Component({
   selector: "app-skills",
   templateUrl: "./skills.component.html",
-  styleUrls: ["./skills.component.scss"]
+  styleUrls: ["./skills.component.scss"],
 })
-export class SkillsComponent {
+export class SkillsComponent implements OnInit {
   // @ViewChild("chart")
   // chart!: ChartComponent;
 
   dataSet = arrayData;
-  public chartOptions: Partial<ChartOptions>;
-  public chartQuarterOptions: Partial<ChartOptions>;
+  public chartOptions!: Partial<ChartOptions>;
+  public chartQuarterOptions!: Partial<ChartOptions>;
 
-  constructor() {
-
+  constructor(private themeService: ThemeService) {}
+  ngOnInit() {
     /* Main Chart */
     this.chartOptions = {
       series: [
         {
           name: "year",
-          data: this.makeData()
-        }
+          data: this.makeData(),
+        },
       ],
       chart: {
         id: "barYear",
@@ -125,8 +113,8 @@ export class SkillsComponent {
           },
           updated: (chart: any) => {
             this.updateQuarterChart(chart, "barQuarter");
-          }
-        }
+          },
+        },
       },
       plotOptions: {
         bar: {
@@ -134,23 +122,23 @@ export class SkillsComponent {
           horizontal: true,
           barHeight: "90%",
           dataLabels: {
-            position: "bottom"
-          }
+            position: "bottom",
+          },
         },
       },
       dataLabels: {
         enabled: true,
         textAnchor: "start",
         style: {
-          colors: ["#fff"]
+          colors: [this.getThemeColor()],
         },
         formatter: function (val: any, opt: any) {
           return opt.w.globals.labels[opt.dataPointIndex];
         },
         offsetX: 0,
         dropShadow: {
-          enabled: true
-        }
+          enabled: true,
+        },
       },
 
       colors: colors,
@@ -158,48 +146,48 @@ export class SkillsComponent {
       states: {
         normal: {
           filter: {
-            type: "desaturate"
-          }
+            type: "desaturate",
+          },
         },
         active: {
           allowMultipleDataPointsSelection: true,
           filter: {
             type: "darken",
-            value: 1
-          }
-        }
+            value: 1,
+          },
+        },
       },
       tooltip: {
         x: {
-          show: false
+          show: false,
         },
         y: {
           title: {
             formatter: function (val: any, opts: any) {
               return opts.w.globals.labels[opts.dataPointIndex];
-            }
-          }
-        }
+            },
+          },
+        },
       },
       title: {
         text: "Skills",
         offsetX: 15,
         style: {
-          color: "#fff"
-        }
+          color: this.getThemeColor() ? "#fff" : "#000",
+        },
       },
       subtitle: {
         text: "(Click on bar to see details)",
         offsetX: 15,
         style: {
-          color: "#fff"
-        }
+          color: this.getThemeColor() ? "#fff" : "#000",
+        },
       },
       yaxis: {
         labels: {
-          show: false
-        }
-      }
+          show: false,
+        },
+      },
     };
 
     // this.chartOptions = {
@@ -227,111 +215,113 @@ export class SkillsComponent {
       series: [
         {
           name: "quarter",
-          data: []
-        }
+          data: [],
+        },
       ],
       chart: {
         id: "barQuarter",
         height: 400,
         width: "100%",
         type: "bar",
-        stacked: true
+        stacked: true,
       },
       plotOptions: {
         bar: {
           columnWidth: "90%",
-          horizontal: false
-        }
+          horizontal: false,
+        },
       },
       legend: {
-        show: false
+        show: false,
       },
       grid: {
         yaxis: {
           lines: {
-            show: false
-          }
+            show: false,
+          },
         },
         xaxis: {
           lines: {
-            show: false
-          }
-        }
+            show: false,
+          },
+        },
       },
       yaxis: {
         labels: {
-          show: false
-        }
+          show: false,
+        },
       },
       title: {
         text: "Quarterly Results",
         offsetX: 15,
         style: {
-          color: "#fff"
-        }
+          color: this.getThemeColor() ? "#fff" : "#000",
+        },
       },
       tooltip: {
         x: {
-          formatter: function(val: any, opts: any) {
+          formatter: function (val: any, opts: any) {
             return opts.w.globals.seriesNames[opts.seriesIndex];
-          }
+          },
         },
         y: {
           title: {
-            formatter: function(val: any, opts: any) {
+            formatter: function (val: any, opts: any) {
               return opts.w.globals.labels[opts.dataPointIndex];
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      },
     };
   }
 
   public makeData(): any {
-
     var dataYearSeries = [
       {
         x: "2011",
         y: this.dataSet[0].y,
         color: colors[0],
-        quarters: this.dataSet[0].quarters
+        quarters: this.dataSet[0].quarters,
       },
       {
         x: "2012",
         y: this.dataSet[1].y,
         color: colors[1],
-        quarters: this.dataSet[1].quarters
+        quarters: this.dataSet[1].quarters,
       },
       {
         x: "2013",
         y: this.dataSet[2].y,
         color: colors[2],
-        quarters: this.dataSet[2].quarters
+        quarters: this.dataSet[2].quarters,
       },
       {
         x: "2014",
         y: this.dataSet[3].y,
         color: colors[3],
-        quarters: this.dataSet[3].quarters
+        quarters: this.dataSet[3].quarters,
       },
       {
         x: "2015",
         y: this.dataSet[4].y,
         color: colors[4],
-        quarters: this.dataSet[4].quarters
+        quarters: this.dataSet[4].quarters,
       },
       {
         x: "2016",
         y: this.dataSet[5].y,
         color: colors[5],
-        quarters: this.dataSet[5].quarters
-      }
+        quarters: this.dataSet[5].quarters,
+      },
     ];
 
     return dataYearSeries;
   }
 
-  public updateQuarterChart(sourceChart: any, destChartIDToUpdate: string | number) {
+  public updateQuarterChart(
+    sourceChart: any,
+    destChartIDToUpdate: string | number,
+  ) {
     var series = [];
     var seriesIndex = 0;
     var colors = [];
@@ -343,7 +333,7 @@ export class SkillsComponent {
         var yearSeries = sourceChart.w.config.series[seriesIndex];
         series.push({
           name: yearSeries.data[selectedIndex].x,
-          data: yearSeries.data[selectedIndex].quarters
+          data: yearSeries.data[selectedIndex].quarters,
         });
         colors.push(yearSeries.data[selectedIndex].color);
       }
@@ -351,17 +341,27 @@ export class SkillsComponent {
       if (series.length === 0)
         series = [
           {
-            data: []
-          }
+            data: [],
+          },
         ];
 
       return window.ApexCharts.exec(destChartIDToUpdate, "updateOptions", {
         series: series,
         colors: colors,
         fill: {
-          colors: colors
-        }
+          colors: colors,
+        },
       });
     }
+  }
+
+  getThemeColor() {
+    return this.themeService.data$.subscribe((isDark) => {
+      if (isDark) {
+        return true;
+      } else {
+        return false;
+      }
+    });
   }
 }

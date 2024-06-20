@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { DataService } from "../services/data.service";
+import { ThemeService } from "../services/theme/theme.service";
 
 @Component({
   selector: "app-resume",
@@ -10,10 +10,10 @@ export class ResumePage implements OnInit {
   isDark!: boolean | undefined;
   theme!: string;
 
-  constructor(private dataService: DataService) {}
+  constructor(private themeService: ThemeService) {}
 
   ngOnInit() {
-    this.dataService.data$.subscribe((data) => {
+    this.themeService.data$.subscribe((data) => {
       if (data?.isDark) this.theme = "dark";
       else this.theme = "light";
     });

@@ -1,92 +1,95 @@
-<ion-content class="content" [scrollEvents]="true" (ionScroll)="onScrollEnd($event)">
-  <div #landing id="landing">
-    <div class="main">
-      <div class="display">
-        <h1>Douglas White</h1>
-        <h5>Web Application Developer</h5>
-        <h5>Building Enterprise PWAs</h5>
-        <h5>Bringing Ideas to Life </h5>
-      </div>
-      <ion-button size="large" shape="round" color="tertiary" strong (click)="scrollToId('about')">
-        View More
-        <ion-icon slot="end" name="arrow-forward"></ion-icon>
-      </ion-button>
-    </div>
-  </div>
-  <ion-grid class="ion-margin-vertical">
-    <ion-row id="about" class="ion-justify-content-center ion-margin-vertical">
-      <ion-col size-xs="12" size-sm="12" size-m="6" size-lg="4" size-xl="4" class="ion-align-self-center">
-        <ion-card id="about" class="card">
-          <ion-card-header class="ion-text-center">
-            <ion-card-title lines="none" class="title nameplate-info">
-              My Contact Information
-            </ion-card-title>
-            <ion-card-subtitle class="sofa">Douglas White</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-grid>
-              <ion-row class="ion-justify-content-center ion-text-center">
-                <ion-col size-xs="12" size-sm="12" size-md="10" size-lg="8" size-xl="6" class="ion-align-items-center">
-                  <img height="200" width="200" src="../../assets/me.jpg" class="myImage" alt="my picture" />
-                </ion-col>
-                <ion-col class="ion-align-self-center" size-xs="12" size-sm="12" size-md="10" size-lg="8" size-xl="8">
-                  <ion-item lines="none" class="nameplate-info">
-                    <ion-icon slot="start" color="tertiary" name="call-sharp"></ion-icon>
-                    &nbsp;
-                    <ion-text class="label">2512.293.1045</ion-text>
-                  </ion-item>
-                  <ion-item lines="none" class="nameplate-info">
-                    <ion-icon slot="start" color="tertiary" name="mail-sharp"></ion-icon>
-                    &nbsp;
-                    <ion-text class="label ion-text-lowercase">
-                      email&#64;douglaswhite.dev
-                    </ion-text>
-                  </ion-item>
-                  <ion-item lines="none" class="nameplate-info">
-                    <ion-icon slot="start" color="tertiary" name="home-sharp"></ion-icon>
-                    &nbsp;
-                    <ion-text class="label">Lubbock TX</ion-text>
-                  </ion-item>
-                  <ion-button (click)="scrollToId('tech')" color="tertiary">
-                    <ion-text>More Info</ion-text>
-                  </ion-button>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-
-    <ion-row id="tech" class="ion-justify-content-center">
-      <ion-col size-xs="12" size-sm="12" size-md="10" size-lg="8" size-xl="8" >
-        <ion-card class="ion-text-center">
-          <ion-card-header>
-            <ion-card-title class="title">
-              Relevant Information
-            </ion-card-title>
-            <ion-card-subtitle class="sofa">
-              Skills & Tech Stack
-            </ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content> 
-            
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row class="ion-justify-content-center">
-      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="4" >
-        <ion-card >
-         <app-skills></app-skills>
-        </ion-card>
-      </ion-col>
-      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="4" >
-        <ion-card >
-         <app-gauges></app-gauges>
-        </ion-card>
-      </ion-col>
-    </ion-row>
+<ion-content [scrollEvents]="true" (ionScroll)="onScrollEnd($event)" class="content">
+  <ion-grid>
+    <section class="hero-section">
+      <ion-row class="hero">
+        <ion-col size-md="6" size-xs="12" class="ion-align-items-center">
+          <ion-card class="hero-text">
+            <h1>Douglas White</h1>
+            <h5>Web Application Developer</h5>
+            <h5>Building Enterprise PWAs</h5>
+            <h5>Bringing Ideas to Life </h5>
+          </ion-card>
+          <app-hero-devices class="hero-image"></app-hero-devices>
+            <ion-button size="large" shape="round" color="primary" strong routerLink="/contact" class="hero-button">
+              Contact me
+            </ion-button>
+        </ion-col>
+      </ion-row>
+    </section>
+    <section class="tech-section">
+      <ion-row class="ion-justify-content-center">
+        <ion-col size-xs="12" size-sm="10" size-md="6" size-lg="4" size-xl="3" class="ion-align-items-center">
+          <ion-card class="ion-text-center">
+            <ion-card-header>
+              <ion-card-subtitle class="sofa">
+                A work in progress
+              </ion-card-subtitle>
+              <ion-card-title class="title">
+                Software Development Skills & Tech Stack
+              </ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size-xs="12" size-sm="10" size-md="6" size-lg="4" size-xl="3" class="ion-align-items-center">
+          <ion-card>
+            <app-skills></app-skills>
+          </ion-card>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="10" size-md="6" size-lg="4" size-xl="3" class="ion-align-items-center">
+          <ion-card>
+            <app-gauges></app-gauges>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </section>
+    <section class="about-section">
+      <ion-row id="about" class="ion-justify-content-center">
+        <ion-col size-xs="12" size-sm="10" size-md="6" size-lg="4" size-xl="3" class="ion-align-items-center">
+          <ion-card class="ion-text-center contact-card">
+            <ion-card-header class="ion-text-center">
+              <ion-card-title lines="none" class="title nameplate-info">
+                Douglas White
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <img height="200" width="200" src="../../assets/me.jpg" class="myImage" alt="my picture" />
+              <ion-item lines="none">
+                <ion-icon slot="start" color="secondary" name="call-sharp"></ion-icon>
+                &nbsp;
+                <ion-label>
+                  <a href="tel:15122931045">
+                    512.293.1045
+                  </a>
+                </ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-icon slot="start" color="secondary" name="mail-sharp"></ion-icon>
+                &nbsp;
+                <ion-label class="ion-text-lowercase">
+                  <a href="mailto:email@douglaswhite.dev" target="_blank">
+                    email&#64;douglaswhite.dev
+                  </a>
+                </ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-icon slot="start" color="secondary" name="home-sharp"></ion-icon>
+                &nbsp;
+                <ion-label>
+                  <a href="https://maps.app.goo.gl/B2Hh1HMbPeixop957" target="_blank">
+                    Lubbock TX
+                  </a>
+                </ion-label>
+              </ion-item>
+              <ion-button routerLink="/contact" color="primary" shape="round">
+                <ion-text>Contact Me</ion-text>
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </section>
   </ion-grid>
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
     <ion-fab-button *ngIf="scrollEnd" id="up" [hidden]="!showBackToTopFab" class="up" size="small"

@@ -1,8 +1,8 @@
 import { Component, OnInit, signal, VERSION } from "@angular/core";
-import { PwaService } from "./services/pwa.service";
+import { PwaService } from "./services/pwa/pwa.service";
 import { ActivatedRoute } from "@angular/router";
 import { ToastController } from "@ionic/angular";
-import { DataService } from "./services/data.service";
+import { ThemeService } from "./services/theme/theme.service";
 @Component({
   selector: "app-root",
   templateUrl: "app.component.html",
@@ -13,14 +13,14 @@ export class AppComponent implements OnInit {
   ion: string = "Ionic " + 8;
   paletteToggle: boolean | undefined;
   isDark: boolean | undefined;
-  currentRoute: string | unknown;
+  showBackButton: boolean = false;
   playToast = signal(true);
 
   constructor(
     public pwa: PwaService,
     private activatedRoute: ActivatedRoute,
     public toastController: ToastController,
-    private dataService: DataService,
+    private themeService: ThemeService,
   ) {}
 
   installPwa(): void {
@@ -28,8 +28,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.currentRoute =
-      this.activatedRoute.snapshot?.routeConfig?.title ?? null;
+    this.activatedRoute.url.subscribe((urlSegments) => {
+      this.showBackButton = urlSegments[0].path === "home";
+    });
     // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -42,7 +43,7 @@ export class AppComponent implements OnInit {
       this.initializeDarkPalette(mediaQuery.matches),
     );
 
-    this.dataService.data$.subscribe((data) => {
+    this.themeService.data$.subscribe((data) => {
       this.paletteToggle = data?.isDark;
     });
 
@@ -75,7 +76,7 @@ export class AppComponent implements OnInit {
   // Check/uncheck the toggle and update the palette based on isDark
   initializeDarkPalette(isDark: boolean) {
     const newData: any = { isDark };
-    this.dataService.setData(newData);
+    this.themeService.setData(newData);
     this.toggleDarkPalette(isDark);
   }
 

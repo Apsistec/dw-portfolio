@@ -1,15 +1,15 @@
-<ion-content class="content">
-  <ion-grid>
-    <ion-row class="ion-justify-content-center">
-      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="4" size-xl="3">
-        <ion-card class="card">
-          <ion-card-header>
-            <ion-card-subtitle> Have an opportunity? </ion-card-subtitle>
-            <ion-card-title class="title"> Contact Douglas</ion-card-title>
+<ion-content>
+  <ion-grid class="main-row">
+    <ion-row class="ion-justify-content-center row">
+      <ion-col size-xs="12" size-sm="10" size-md="6" size-lg="4" size-xl="3" class="ion-align-self-center">
+        <ion-card>
+          <ion-card-header class="ion-text-center">
+            <ion-card-subtitle> Let me know you stopped by... </ion-card-subtitle>
+            <ion-card-title class="title"> Contact Me</ion-card-title>
           </ion-card-header>
           <ion-card-content class="ion-text-center">
             <ion-note><small>
-                Note: I will not sell or use your email improperly.
+                Note: I will never sell your information.
               </small>
             </ion-note>
             <form [formGroup]="emailForm" novalidate (ngSubmit)="onSubmit()">
@@ -33,11 +33,11 @@
                 </ion-button>
               </div>
             </form>
+            Status: {{emailForm.status}}
           </ion-card-content>
-          {{emailForm.status}}
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
+  <app-footer class="footer"></app-footer>
 </ion-content>
-<app-footer class="footer"></app-footer>

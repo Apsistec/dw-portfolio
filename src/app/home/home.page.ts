@@ -1,6 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
 import { IonContent } from "@ionic/angular";
-import { EChartsOption } from "echarts";
 
 @Component({
   selector: "app-home",
@@ -13,13 +12,6 @@ export class HomePage {
   @ViewChild(IonContent, { static: false })
   content!: IonContent;
   scrollEnd = false;
-
-
-
-
-  ngOnInit(): void {
-
-  };
 
   onScrollEnd(ev: Event) {
     this.scrollEnd = true;

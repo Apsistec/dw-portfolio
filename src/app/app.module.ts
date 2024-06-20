@@ -12,7 +12,7 @@ import { NgxExtendedPdfViewerModule } from "ngx-extended-pdf-viewer";
 import { environment } from "src/environments/environment";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireFunctionsModule } from "@angular/fire/compat/functions";
-import { NgxEchartsModule, provideEcharts } from "ngx-echarts";
+
 @NgModule({
   declarations: [AppComponent, TabsComponent],
   imports: [
@@ -26,14 +26,8 @@ import { NgxEchartsModule, provideEcharts } from "ngx-echarts";
     NgxExtendedPdfViewerModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireFunctionsModule,
-    NgxEchartsModule.forRoot({
-      echarts: () => import("echarts"),
-    }),
   ],
-  providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    provideEcharts(),
-  ],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

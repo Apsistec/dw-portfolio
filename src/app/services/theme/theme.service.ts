@@ -8,7 +8,7 @@ interface MyData {
 @Injectable({
   providedIn: "root",
 })
-export class DataService {
+export class ThemeService {
   private dataSubject = new BehaviorSubject<MyData | null>(null);
   data$ = this.dataSubject.asObservable();
 
@@ -17,16 +17,16 @@ export class DataService {
   }
 
   getIsDark() {
-    return this.data$.subscribe(data => {
+    return this.data$.subscribe((data) => {
       if (data) {
         if (data.isDark) {
-          return 'dark'
+          return true;
         } else {
-          return 'light'
+          return false;
         }
       } else {
-        return undefined
+        return undefined;
       }
-    })
+    });
   }
 }
