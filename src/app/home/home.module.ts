@@ -7,10 +7,9 @@ import { IonicModule } from "@ionic/angular";
 import { HomePage } from "./home.page";
 import { SharedModule } from "../shared/shared.module";
 import { HomePageRoutingModule } from "./home-routing.module";
-import { SkillsComponent } from "../components/skills/skills.component";
-import { NgApexchartsModule } from "ng-apexcharts";
-import { GaugesComponent } from "../components/gauges/gauges.component";
 import { HeroDevicesComponent } from "../components/hero-devices/hero-devices.component";
+import { TreeComponent } from "../components/tree/tree.component";
+import { NgxEchartsModule } from "ngx-echarts";
 
 @NgModule({
   imports: [
@@ -19,13 +18,12 @@ import { HeroDevicesComponent } from "../components/hero-devices/hero-devices.co
     IonicModule,
     SharedModule,
     HomePageRoutingModule,
-    NgApexchartsModule,
+    NgxEchartsModule,
   ],
   declarations: [
     HomePage,
-    SkillsComponent,
-    GaugesComponent,
     HeroDevicesComponent,
+    TreeComponent,
   ],
 })
 export class HomePageModule {}
