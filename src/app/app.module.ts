@@ -14,7 +14,7 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireFunctionsModule } from "@angular/fire/compat/functions";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgxEchartsModule } from "ngx-echarts";
-// import * as echarts from "echarts";
+
 @NgModule({
   declarations: [AppComponent, TabsComponent],
   imports: [
@@ -29,12 +29,11 @@ import { NgxEchartsModule } from "ngx-echarts";
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireFunctionsModule,
     BrowserAnimationsModule,
-	NgxEchartsModule.forRoot({
-		echarts: () => import('echarts'),
-	  }),
+    NgxEchartsModule.forRoot({
+      echarts: () => import("echarts"),
+    }),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-  ],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

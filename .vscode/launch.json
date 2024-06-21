@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+        "name": "SendMail",
+        "type": "cloudcode.cloudfunctions",
+        "request": "launch",
+        "functionName": "sendMail",
+        "gen": "GEN_2",
+        "entryPoint": "sendMail",
+        }
+     ]
+   }
