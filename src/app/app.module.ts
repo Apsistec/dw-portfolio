@@ -13,7 +13,6 @@ import { environment } from "src/environments/environment";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireFunctionsModule } from "@angular/fire/compat/functions";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NgxEchartsModule } from "ngx-echarts";
 
 @NgModule({
   declarations: [AppComponent, TabsComponent],
@@ -29,9 +28,6 @@ import { NgxEchartsModule } from "ngx-echarts";
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireFunctionsModule,
     BrowserAnimationsModule,
-    NgxEchartsModule.forRoot({
-      echarts: () => import("echarts"),
-    }),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
