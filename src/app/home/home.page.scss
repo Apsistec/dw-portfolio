@@ -1,31 +1,74 @@
-#landing {
-  height: 95vh;
-  width: 100vw;
+/* Base styles for desktop */
+.hero-section {
+  height: calc(90vh);
 }
 
-/* Main section of each page */
-.main {
-  text-align: center;
+.hero {
+  justify-content: center;
   height: 100%;
-  width: 100%;
-  display: grid;
-  place-content: center;
+}
+
+.hero-text {
+  position: absolute;
+  padding: 1rem;
+  text-align: left;
+  left: 0;
+  top: 100px;
+  background-color: rgba(var(--ion-color-tertiary-rgb), 0.6);
+  color: var(--ion-text-color);
+  h1 {
+    font-size: 3rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+}
+
+.hero-image {
+  position: absolute;
+  top:100px;
+  margin: 20px 70px;
+  z-index: -1;
+}
+
+/* Media query for mobile devices (adjust screen size as needed) */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
 }
 
 .name {
   text-transform: uppercase;
 }
 
-.nameplate-info {
-  width: 100%;
-  font-weight: bold;
+.about-section {
+  height: calc(100vh - 120px);
 }
 
-.myImage {
-  border-radius: 15px;
+#about {
+  height: 100%;
 }
 
-ion-card {
-  border-radius: 15px;
-  justify-content: center;
+.tech-section {
+  height: calc(100vh - 120px);
+}
+
+#tech {
+  height: 100%;
+}
+
+.hero-button {
+  position: absolute;
+  left: 10px;
+  top: 350px;
+}
+
+.gauge-card {
+  height: 400px;
 }

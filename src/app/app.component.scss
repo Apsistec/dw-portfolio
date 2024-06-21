@@ -1,0 +1,9 @@
+
+
+.toggle {
+    padding-inline: 5px;
+    --handle-background-checked: var(--ion-color-light);
+    --handle-background: var(--ion-color-warning);
+    --track-background: var(--ion-color-secondary);
+    --track-background-checked: var(--ion-color-dark);
+}

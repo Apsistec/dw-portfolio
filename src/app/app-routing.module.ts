@@ -9,7 +9,6 @@ const routes: Routes = [
     children: [
       {
         path: "home",
-        title: "Home",
         children: [
           {
             path: "",
@@ -58,4 +57,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,20 +1,20 @@
 <ion-app>
   <ion-header [translucent]="true" class="header" collapse="fade">
-    <ion-toolbar>
-      <ion-buttons slot="start" *ngIf="currentRoute !== 'Home'">
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start" *ngIf="showBackButton">
         <ion-back-button default-href="#"></ion-back-button>
       </ion-buttons>
       <ion-img src="../assets/computer-code.png" alt="computer"  slot="start" routerLink="/"
-        style="padding-left: 10px; height: 48px;"></ion-img>
-      <ion-title> DouglasWhite.app </ion-title>
+        style="padding-left: 10px; height: 42px;"></ion-img>
+      <ion-title> Douglas White </ion-title>
       <ion-buttons slot="end">
         <ion-icon color="warning" name="sunny"></ion-icon>
-        <ion-toggle (ionChange)="toggleChange($event)" checked="palletToggle" style="padding-inline: 5px;"></ion-toggle>
+        <ion-toggle (ionChange)="toggleChange($event)" checked="palletToggle" class="toggle"></ion-toggle>
         <ion-icon style="padding-right: 10px" name="moon"></ion-icon>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
+  <ion-content class="content">
     <ion-router-outlet></ion-router-outlet>
     <ion-button *ngIf="pwa.promptEvent" (click)="installPwa()">
       Install
