@@ -72,6 +72,7 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.4.0"
   },
+
   "description": "An interactive portfolio PWA showcasing my skills and experience with the latest web technologies.",
   "browserslist": [
     "Chrome >=89",

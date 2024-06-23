@@ -12,7 +12,7 @@
   "orientation": "portrait-primary",
   "screenshots": [
   {
-    "src": "assets/rankfantasysports.png", 
+    "src": "../assets/rankfantasysports.png", 
     "sizes": "1280x720",  
     "type": "image/png", 
     "purpose": "any",
@@ -21,7 +21,7 @@
 ],
   "icons": [
     {
-      "src": "assets/icons/icon-48.webp",
+      "src": "./assets/icons/icon-48.webp",
       "type": "image/webp",
       "sizes": "48x48",
       "purpose": "maskable"

@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
       const toast = await this.toastController.create({
         header: `My portfolio as a cross platform PWA built with ${this.ion} & ${this.angular}`,
         message: `Thank you for stopping by. Be sure to see my resume and send me a message to let me know you were here.`,
-        icon: "../../assets/computer-code.svg",
+        icon: "../assets/computer-code.png",
         position: "middle",
         color: "success",
         buttons: [

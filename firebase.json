@@ -17,7 +17,7 @@
     }
   ],
   "hosting": {
-    "public": "www/browser",
+    "public": "www",
     "target": "dw-portfolio",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
