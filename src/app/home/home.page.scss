@@ -72,3 +72,24 @@
 .gauge-card {
   height: 400px;
 }
+
+.m1{
+  animation: intro .75s ease-in-out 1s;
+}
+
+.m2{
+  animation: intro .75s ease-in-out 1.25s; 
+}
+
+.m3{
+  animation: intro .75s ease-in-out 1.5s;
+}
+
+@keyframes intro {
+  from {
+    font-size: 22px;
+  }
+ to{
+ }
+
+}

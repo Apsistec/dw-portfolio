@@ -5,27 +5,29 @@
         <ion-card>
           <ion-card-header class="ion-text-center">
             <ion-card-subtitle> Let me know you stopped by... </ion-card-subtitle>
-            <ion-card-title class="title"> Contact Me</ion-card-title>
+            <ion-card-title class="title"> Contact Douglas</ion-card-title>
           </ion-card-header>
-          <ion-card-content class="ion-text-center">
-            <ion-note><small>
-                Note: I will never sell your information.
-              </small>
-            </ion-note>
+          <ion-card-content>
+            <div class="ion-text-center">
+                <small>
+                  Note: I will never sell your information.
+                </small>
+            </div>
             <form [formGroup]="emailForm" novalidate (ngSubmit)="onSubmit()">
-              <ion-input label="Name" helperText="Name is required" errorText="Please enter full name" counter="true"
-                maxlength="30" type="text" fill="outline" labelPlacement="floating" formControlName="name" name
+              <ion-input label="Name" placeHolder="Name is required" errorText="Please enter full name" counter="true"
+                maxlength="30" type="text" fill="outline" labelPlacement="stacked" formControlName="name" name
                 autocapitalize="words" autocomplete="name">
                 <ion-icon slot="start" name="person" aria-hidden="true"></ion-icon>
               </ion-input>
-              <ion-input helperText="Email is required" errorText="Please enter a valid email" label="Email"
-                fill="outline" counter="true" maxlength="30" labelPlacement="floating" type="email"
+              <ion-input placeHolder="Email is required" errorText="Please enter a valid email" label="Email"
+                fill="outline" counter="true" maxlength="30" labelPlacement="stacked" type="email"
                 formControlName="email" email autocomplete="email">
                 <ion-icon slot="start" name="mail" aria-hidden="true"></ion-icon>
               </ion-input>
-              <ion-textarea helperText="Message required" errorText="Please enter a longer message" label="Message"
-                fill="outline" counter="true" maxlength="1000" autocapitalize="on" autocorrect="on" autoGrow="true"
-                wrap="soft" labelPlacement="floating" formControlName="message" message>
+              <ion-textarea placeHolder="Message required" errorText="Please enter a longer message" label="Message"
+              fill="outline" counter="true" maxlength="1000" autocapitalize="on" autocorrect="on" autoGrow="true"
+              wrap="soft" labelPlacement="stacked" formControlName="message" message>
+              <ion-icon slot="start" name="pencil" aria-hidden="true"></ion-icon>
               </ion-textarea>
               <div class="ion-text-center">
                 <ion-button type="submit" shape="round" color="primary" strong>
@@ -33,7 +35,13 @@
                 </ion-button>
               </div>
             </form>
-            Status: {{emailForm.status}}
+            <div class="ion-text-center status">
+              Status:
+              <ion-note
+                [ngStyle]="emailForm.valid ? {'color': 'var(--ion-color-success)'} : {'color': 'var(--ion-text-color)'}">
+                {{emailForm.status}}
+              </ion-note>
+            </div>
           </ion-card-content>
         </ion-card>
       </ion-col>

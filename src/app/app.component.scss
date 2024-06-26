@@ -1,9 +1,21 @@
-
-
 .toggle {
     padding-inline: 5px;
     --handle-background-checked: var(--ion-color-light);
     --handle-background: var(--ion-color-warning);
     --track-background: var(--ion-color-secondary);
     --track-background-checked: var(--ion-color-dark);
+}
+
+/* The navbar container */
+.top-nav {
+    overflow: hidden;
+}
+
+/* Navbar links */
+.top-nav ion-button {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }

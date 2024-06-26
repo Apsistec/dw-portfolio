@@ -1,8 +1,8 @@
 import { Component, OnInit, signal, VERSION } from "@angular/core";
 import { PwaService } from "./services/pwa/pwa.service";
-import { ActivatedRoute } from "@angular/router";
 import { ToastController } from "@ionic/angular";
 import { ThemeService } from "./services/theme/theme.service";
+
 @Component({
   selector: "app-root",
   templateUrl: "app.component.html",
@@ -15,22 +15,17 @@ export class AppComponent implements OnInit {
   isDark: boolean | undefined;
   showBackButton: boolean = false;
   playToast = signal(true);
-
+  currentPath!: string;
   constructor(
     public pwa: PwaService,
-    private activatedRoute: ActivatedRoute,
     public toastController: ToastController,
-    private themeService: ThemeService,
-  ) {}
+    private themeService: ThemeService  ) {}
 
   installPwa(): void {
     this.pwa.promptEvent.prompt();
   }
 
   ngOnInit() {
-    this.activatedRoute.url.subscribe((urlSegments) => {
-      this.showBackButton = urlSegments[0].path === "home";
-    });
     // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -40,29 +35,31 @@ export class AppComponent implements OnInit {
 
     // Listen for changes to the prefers-color-scheme media query
     prefersDark.addEventListener("change", (mediaQuery) =>
-      this.initializeDarkPalette(mediaQuery.matches),
+      this.initializeDarkPalette(mediaQuery.matches)
     );
 
     this.themeService.data$.subscribe((data) => {
       this.paletteToggle = data?.isDark;
     });
 
-    this.presentToast();
+    setTimeout(() => {
+      this.presentToast();
+    }, 3000);
   }
 
   async presentToast() {
-    if (this.playToast() == true) {
-      return;
-    } else {
+    if (this.playToast()) {
       const toast = await this.toastController.create({
-        header: `My portfolio as a cross platform PWA built with ${this.ion} & ${this.angular}`,
-        message: `Thank you for stopping by. Be sure to see my resume and send me a message to let me know you were here.`,
-        icon: "../assets/computer-code.png",
         position: "middle",
-        color: "success",
+        header: `Thanks for stopping by...`,
+        message: `This cross platform PWA uses ${this.ion} & ${this.angular}.`,
+        cssClass: "intro-toast",
+        icon: "logo-ionic",
+        color: "medium",
+        duration: 5000,
         buttons: [
           {
-            text: "Dismiss",
+            icon: "close",
             role: "cancel",
           },
         ],
@@ -70,6 +67,8 @@ export class AppComponent implements OnInit {
       await toast.present().then(() => {
         this.playToast.set(false);
       });
+    } else {
+      return;
     }
   }
 
@@ -89,4 +88,5 @@ export class AppComponent implements OnInit {
   toggleDarkPalette(shouldAdd: boolean | undefined) {
     document.documentElement.classList.toggle("ion-palette-dark", shouldAdd);
   }
+
 }

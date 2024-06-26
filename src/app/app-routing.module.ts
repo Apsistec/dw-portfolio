@@ -9,35 +9,21 @@ const routes: Routes = [
     children: [
       {
         path: "home",
-        children: [
-          {
-            path: "",
-            loadChildren: () =>
-              import("./home/home.module").then((m) => m.HomePageModule),
-          },
-        ],
+        title: "Home",
+        loadChildren: () =>
+          import("./home/home.module").then((m) => m.HomePageModule),
       },
       {
         path: "resume",
-        children: [
-          {
-            path: "",
-            loadChildren: () =>
-              import("./resume/resume.module").then((m) => m.ResumePageModule),
-          },
-        ],
+        title: "Resume",
+        loadChildren: () =>
+          import("./resume/resume.module").then((m) => m.ResumePageModule),
       },
       {
         path: "contact",
-        children: [
-          {
-            path: "",
-            loadChildren: () =>
-              import("./contact/contact.module").then(
-                (m) => m.ContactPageModule,
-              ),
-          },
-        ],
+        title: "Contact",
+        loadChildren: () =>
+          import("./contact/contact.module").then((m) => m.ContactPageModule),
       },
       {
         path: "",

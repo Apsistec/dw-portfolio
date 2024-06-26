@@ -48,7 +48,6 @@
     "@angular-eslint/eslint-plugin-template": "^18.0.1",
     "@angular-eslint/schematics": "^18.0.1",
     "@angular-eslint/template-parser": "^18.0.1",
-    "@angular/cli": "^18.0.5",
     "@angular/compiler-cli": "^18.0.4",
     "@angular/language-service": "^18.0.4",
     "@capacitor/assets": "^3.0.5",
@@ -72,8 +71,13 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.4.0"
   },
-
-  "description": "An interactive portfolio PWA showcasing my skills and experience with the latest web technologies.",
+  "overrides": {
+    "ng-apexcharts": {
+      "@angular/common": ">17.0.2",
+      "@angular/core": ">17.0.2"
+    }
+  },
+  "description": "Explore my interactive portfolio PWA! See projects built with Angular, Ionic, Firebase & GCP. Works offline for a smooth experience on any device.",
   "browserslist": [
     "Chrome >=89",
     "ChromeAndroid >=89",

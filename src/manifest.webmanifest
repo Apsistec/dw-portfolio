@@ -1,0 +1,104 @@
+{
+  "name": "Douglas' Portfolio PWA",
+  "short_name": "Douglas' PWA",
+  "theme_color": "#00435e",
+  "categories": ["utilities", "productivity"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "description": "Explore my interactive portfolio PWA! See projects built with Angular, Ionic, Firebase & GCP. Works offline for a smooth experience on any device.",
+  "background_color": "#111111",
+  "display": "standalone",
+  "scope": "./",
+  "id": "/",
+  "start_url": "./",
+  "orientation": "portrait-primary",
+  "screenshots": [
+    {
+      "src": "assets/screenshots/screenshot-large.png",
+      "sizes": "1904x963",
+      "type": "image/png",
+      "purpose": "any",
+      "form_factor": "wide"
+    },
+    {
+      "src": "assets/screenshots/screenshot-small.png",
+      "sizes": "640x480",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "icons": [
+    {
+      "src": "./assets/icons/icon-48.webp",
+      "type": "image/webp",
+      "sizes": "48x48",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-72.webp",
+      "type": "image/webp",
+      "sizes": "72x72",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-96.webp",
+      "type": "image/webp",
+      "sizes": "96x96",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-128.webp",
+      "type": "image/webp",
+      "sizes": "128x128",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-192.webp",
+      "type": "image/webp",
+      "sizes": "192x192",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-256.webp",
+      "type": "image/webp",
+      "sizes": "256x256",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-512.webp",
+      "type": "image/webp",
+      "sizes": "512x512",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "View resume",
+      "short_name": "Resume",
+      "description": "View Douglas White's resume",
+      "url": "/resume",
+      "icons": [
+        {
+          "src": "assets/icons/icon-96.webp",
+          "sizes": "96x96",
+          "type": "image/webp",
+          "purpose": "any"
+        }
+      ]
+    },
+    {
+      "name": "Contact Douglas",
+      "short_name": "Contact",
+      "description": "Send Douglas White a message",
+      "url": "/contact",
+      "icons": [
+        {
+          "src": "assets/icons/icon-96.webp",
+          "sizes": "96x96",
+          "type": "image/webp",
+          "purpose": "any"
+        }
+      ]
+    }
+  ]
+}

@@ -11,6 +11,8 @@ import { HeroDevicesComponent } from "../components/hero-devices/hero-devices.co
 import { SkillsComponent } from "../components/skills/skills.component";
 import { GaugesComponent } from "../components/gauges/gauges.component";
 import { NgApexchartsModule } from "ng-apexcharts";
+import { ExperienceComponent } from "../components/experience/experience.component";
+
 
 @NgModule({
   imports: [
@@ -26,6 +28,7 @@ import { NgApexchartsModule } from "ng-apexcharts";
     HeroDevicesComponent,
     SkillsComponent,
     GaugesComponent,
+    ExperienceComponent
   ],
 })
 export class HomePageModule {}

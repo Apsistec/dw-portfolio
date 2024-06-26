@@ -1,35 +1,19 @@
-
-
-.link-icons {
-  float: right;
-  margin-right: 30px;
-}
-
 .icon {
-  margin: 15px;
-  font-size: 30px;
-}
-
-.github {
+  position: relative;
+  top: 0;
+  margin: 1rem;
+  font-size: 20px;
   color: var(--ion-text-color);
 }
 
-.stack {
-  color: var(--ion-text-color);
-}
-
-.linkedin {
-  color: var(--ion-text-color);
-}
-
-/* Logo in toolbars */
 .logo {
-  height: 42px;
+  height: 38px;
   margin-left: 1rem;
 }
 
 .copyright {
   position: absolute;
+  margin: 10px;
   font-size: x-small;
-  bottom: 5px;
+  bottom: -5px;
 }

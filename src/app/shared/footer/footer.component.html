@@ -1,39 +1,27 @@
 <ion-footer class="footer" translucent="true" collapse="fade">
   <ion-toolbar class="footer-toolbar">
-    <ion-buttons class="link-icons">
+    <ion-buttons slot="start">
+      <ion-img src="../../../assets/images/computer-code.svg" alt="computer" class="logo"></ion-img>
+    </ion-buttons>
+    <ion-note style="color: var(--ion-text-color)" class="copyright">
+      &#9426;{{ yearDate | date: "yyyy" }} www.douglaswhite.app
+    </ion-note>
+    <ion-buttons slot="end" class="link-icons">
       <a rel="noreferrer" href="https://github.com/Apsistec" target="_blank">
-        <ion-icon class="icon github" name="logo-github"> </ion-icon>
+        <ion-icon class="icon" name="logo-github"> </ion-icon>
       </a>
-      <a
-        rel="noreferrer"
-        href="https://www.linkedin.com/in/apsistec/"
-        target="_blank"
-      >
-        <ion-icon class="icon linkedin" name="logo-linkedin"> </ion-icon>
+      <a rel="noreferrer" href="https://www.linkedin.com/in/apsistec/" target="_blank">
+        <ion-icon class="icon" name="logo-linkedin"> </ion-icon>
       </a>
-      <a
-        rel="noreferrer"
-        href="https://stackoverflow.com/users/10599330/doug-white?tab=profile"
-        target="_blank"
-      >
+      <a rel="noreferrer" href="https://stackoverflow.com/users/10599330/doug-white?tab=profile" target="_blank">
         <ion-icon class="icon stack" name="logo-stackoverflow"> </ion-icon>
       </a>
       <a rel="noreferrer" href="sms:512-293-1045">
-        <ion-icon class="icon stack" name="call-sharp"> </ion-icon>
+        <ion-icon class="icon" name="call-sharp"> </ion-icon>
       </a>
-      <a
-        rel="noreferrer"
-        href="mailto:doug@apsistec.app?subject=Coding Opportunity"
-        target="_blank"
-      >
-        <ion-icon class="icon stack" name="mail-sharp"> </ion-icon>
+      <a rel="noreferrer" href="mailto:doug@apsistec.app?subject=Coding Opportunity" target="_blank">
+        <ion-icon class="icon" name="mail-sharp"> </ion-icon>
       </a>
     </ion-buttons>
-    <div class="ion-text-center">
-      <ion-note style="color: var(--ion-text-color)" class="copyright">
-        &#9426;{{ yearDate | date: "yyyy" }} www.douglaswhite.app
-      </ion-note>
-    </div>
-    <img src="../../../assets/computer-code.svg" alt="computer" class="logo" />
   </ion-toolbar>
 </ion-footer>

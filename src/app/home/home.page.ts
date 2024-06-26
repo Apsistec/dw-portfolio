@@ -12,6 +12,7 @@ export class HomePage {
   @ViewChild(IonContent, { static: false })
   content!: IonContent;
   scrollEnd = false;
+  isShown: any;
 
   onScrollEnd(ev: Event) {
     this.scrollEnd = true;

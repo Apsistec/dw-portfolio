@@ -29,7 +29,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/apsistec/dw-portfolio">
-    <img src="src/assets/computer-code.svg" alt="Logo" width="80" height="80">
+    <img src="src/assets/images/computer-code.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">dw-portfolio</h3>
@@ -48,11 +48,12 @@
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
+## TABLE OF CONTENTS
 
 <details>
   <summary>Table of Contents</summary>
   <ol>
+ <li><a href="#tech-stack">Tech Stack</a></li>
  <li>
  <a href="#about-the-project">About the Project</a>
  <ul>
@@ -61,18 +62,22 @@
    </li>
  </ul>
  </li>
- <li><a href="#support">Support</a></li>
- <li>
-  <a href="#getting-started">Getting Started</a>
- <ul>
-   <li><a href="#prerequisites">Prerequisites</a></li>
-   <li><a href="#installation">Installation</a></li>
-   </ul>
-   </li>
+<li>
+<a href="#getting-started">Getting Started</a>
+</li>
+   <li><a href="#installation">Installation</a>
+  <ul>
+   <li><a href="#acquire-accounts">Acquire Accounts</a></li>
+   <li><a href="#add-pwa-features">Add PWA Features</a></li>
+   <li><a href="#add-firebase">Add Firebase</a></li>
+ <li><a href="#build-and-deploy">Build & Deploy</a></li>
+  </ul>
+  </li>
  <li><a href="#usage">Usage</a></li>
  <li><a href="#roadmap">Roadmap</a></li>
+ <li><a href="#contributing">Contributing</a></li>
  <li><a href="#license">License</a></li>
- <li><a href="#contact">Contact</a></li>
+ <li><a href="#contributors">Contributors</a></li>
  <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -84,7 +89,6 @@
 - [Firebase](https://firebase.com)
 - [Sendgrid](https://sendgrid.com)
 
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 A portfolio for Douglas White presenting some of the functionality available in
@@ -96,124 +100,133 @@ an Ionic progressive web application.
 - ![Ionic](Ionic-url)
 - ![Firebase](firebase-url)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+The following steps will help you get a local clone up and running
 
-## Prerequisites
+### Installation
 
-1. Install
-   [NodeJS](https://www.nodejs.com)
+1. Install [NodeJS](https://www.nodejs.com)
 
-2. Using npm, install:
+2. Clone the repo:
 
-`sh npm install @angular/cli@latest -global`
+   `git clone https://github.com/apsistec/dw-portfolio.git`
 
-`sh npm install @ionic/cli@latest -global`
+3. Install NPM packages
 
-`sh npm install firebase-tools@latest -global`
+   ` npm install`
 
-## Acquire Accounts
+4. Using npm, install:
+
+   `npm install @angular/cli@latest --global`
+
+   `npm install @ionic/cli@latest --global`
+
+   `npm install firebase-tools@latest --global`
+
+   `npm install @ionic/angular@latest`
+
+### Acquire Accounts
 
 1. Get a free Firebase Account at [https://firebase.com](https://firebase.com)
 2. Get a free Sendgrid Account at [https://app.sendgrid.com](https://app.sendgrid.com)
 
-## Installation
+### Add PWA Features
 
-1. Clone the repo
-   `sh git clone https://github.com/apsistec/dw-portfolio.git`
+1. Install Angular PWA tools
 
-2. Install NPM packages
-   `sh npm install`
+   `ng add @angular/pwa`
 
-3. Enter your APIs in `environments/environment.ts` and `environments/environment.prod.ts`
+2. Install & Run Capacitor Assets tool
 
-   ````js
-     export const environment = {
-       production: "boolean",
-       firebaseConfig: {
-         apiKey: "...",
-         authDomain: "...",
-         databaseURL: "...",
-         projectId: "...",
-         storageBucket: "...",
-         messagingSenderId: "...",
-         appId: "...",
-         measurementId: "...",
-       },
-       stripePubKey: "pk_test_ API",
-       taxRates: ["enter API"],
-     };```
+   `npm i @capacitor/assets`
 
-   ````
+### Add Firebase
 
-## Build and Deploy
+1. Install Angular Firebase tools
+
+   `ng add @angular/fire`
+
+2. Enter your Firebase API key
+
+   `environments/environment.ts` & `environments/environment.prod.ts`
+
+   Example:
+
+   ```js
+   export const environment = {
+     production: "boolean",
+     firebaseConfig: {
+       apiKey: "string",
+       authDomain: "string",
+       databaseURL: "string",
+       projectId: "string",
+       storageBucket: "string",
+       messagingSenderId: "string",
+       appId: "string",
+       measurementId: "string",
+     },
+   };
+   ```
+
+3. Initialize Firebase
+
+   `firebase init`
+
+   <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Build & Deploy
 
 1. Work on the app code with hot-reload
 
-   ````sh
-   ionic serve```
+   `ionic serve`
 
-   ````
+2. Install Sendgrid
 
-2. Compile the function code
+   `cd functions`
 
-   ````sh
-   cd functions```
+   `npm i @sendgrid/mail`
 
-   ```sh
-   npm install```
+3. Compile the function code
 
-   ```sh
-   ng build```
+   `npm install`
 
-   ```sh
-   cd -```
+   `ng build`
 
-   ````
+   `cd -`
 
-3. Compile the app code -production quality
+4. Compile the app code -production quality
 
-   ````sh
-   ionic build --prod```
+   `ionic build --prod`
 
-   ````
+5. Deploy to Firebase Functions & Hosting
 
-4. Deploy to Firebase Authentication, Hosting, Database, Serverless and Storage
+   `firebase deploy`
 
-   ````sh
-   firebase deploy```
-   ````
-
-<!-- USAGE EXAMPLES -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Usage
 
 Primary functions available in app
 
-- _View and Print Resume [James (Doug)las White Resume](src/assets/resume.pdf)_
-- _Send Message [Sendgrid.com][sendgrid-url]_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ROADMAP -->
+- _View and Print Douglas' Resume_ [(James (Doug)las White Resume)](src/assets/pdfs/resume.pdf)
+- _Send Message to Douglas_ [(Sendgrid.com)][sendgrid-url]
 
 ## Roadmap
 
 - [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-  - [ ] Chinese
-  - [ ] Spanish
+- [x] Add Contact Page
+- [ ] Add In App Messaging
+- [ ] Improve Visualizations
+- [ ] Add Authentication
+- [ ] Add Menu
 
 See the [open issues](https://github.com/apsistec/dw-portfolio/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -225,19 +238,22 @@ Don't forget to give the project a star! Thanks again!
 2. Create your Feature Branch (`git checkout -b feature/Amazing Feature`)
 3. Commit your Changes (`git commit -m 'Add some Amazing Feature'`)
 4. Push to the Branch (`git push origin feature/Amazing Feature`)
-5. Open a Pull Request
+5. Open a Pull Request to Main
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTACT -->
-## Contact and Support
+## Contacts
+
+
+Project Link: [https://github.com/apsistec/dw-portfolio](https://github.com/apsistec/dw-portfolio)
+
+## Contributors
+
+![**Apsistec**][avatar-url]
 
 Douglas White
 
@@ -245,21 +261,10 @@ Douglas White
 
 - <email@douglaswhite.dev>
 
-- [website](https://douglaswhite.app)
+- [www.douglaswhite.app](https://douglaswhite.app)
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-Project Link: [https://github.com/apsistec/dw-portfolio](https://github.com/apsistec/dw-portfolio)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Contributors/People
-
-![**Apsistec**][avatar-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
 - [Ionic Framework][ionic-url]
