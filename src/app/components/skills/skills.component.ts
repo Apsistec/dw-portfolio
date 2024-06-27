@@ -14,13 +14,12 @@ type ApexXAxis = {
 };
 
 var colors = [
-  "#008FFB",
-  "#00E396",
-  "#FEB019",
-  "#FF4560",
-  "#775DD0",
-  "#00D9E9",
-  "#FF66C3",
+  "#6C0009",
+  "#6C6C09",
+  "#006C09",
+  "#006C75",
+  "#000075",
+  "#6C0075",
 ];
 
 export type ChartOptions = {
@@ -130,7 +129,7 @@ export class SkillsComponent implements OnInit {
         enabled: true,
         textAnchor: "start",
         style: {
-          colors: [this.getThemeColor()],
+          colors: [this.themeService.getThemeColor() ? "#fff" : "#000"],
         },
         formatter: function (val: any, opt: any) {
           return opt.w.globals.labels[opt.dataPointIndex];
@@ -173,14 +172,14 @@ export class SkillsComponent implements OnInit {
         text: "Skills",
         offsetX: 15,
         style: {
-          color: this.getThemeColor() ? "#fff" : "#000",
+          color: this.themeService.getThemeColor() ? "#fff" : "#000",
         },
       },
       subtitle: {
         text: "(Click on bar to see details)",
         offsetX: 15,
         style: {
-          color: this.getThemeColor() ? "#fff" : "#000",
+          color: this.themeService.getThemeColor() ? "#fff" : "#000",
         },
       },
       yaxis: {
@@ -189,26 +188,6 @@ export class SkillsComponent implements OnInit {
         },
       },
     };
-
-    // this.chartOptions = {
-    //   series: [100, 100, 100, 100, 100],
-    //   chart: {
-    //     width: 380,
-    //     type: "pie"
-    //   },
-    //   labels: [this.dataSet],
-    //   responsive: [
-    //     {
-    //       breakpoint: 80,
-    //       options: {
-    //         chart: {
-    //           width: 200
-    //         },
-
-    //       }
-    //     }
-    //   ]
-    // };
 
     /* Secondary Chart */
     this.chartQuarterOptions = {
@@ -253,9 +232,9 @@ export class SkillsComponent implements OnInit {
       },
       title: {
         text: "Quarterly Results",
-        offsetX: 15,
+        align: "center",
         style: {
-          color: this.getThemeColor() ? "#fff" : "#000",
+          color: this.themeService.getThemeColor() ? "#fff" : "#000",
         },
       },
       tooltip: {
@@ -353,15 +332,5 @@ export class SkillsComponent implements OnInit {
         },
       });
     }
-  }
-
-  getThemeColor() {
-    return this.themeService.data$.subscribe((isDark) => {
-      if (isDark) {
-        return true;
-      } else {
-        return false;
-      }
-    });
   }
 }

@@ -1,14 +1,18 @@
 .icon {
   position: relative;
   top: 0;
-  margin: 1rem;
+  margin: 0.5rem;
   font-size: 20px;
   color: var(--ion-text-color);
 }
 
+.icons {
+  margin-right: 3rem;
+}
+
 .logo {
   height: 38px;
-  margin-left: 1rem;
+  margin-left: 0.6rem;
 }
 
 .copyright {

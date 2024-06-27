@@ -29,4 +29,14 @@ export class ThemeService {
       }
     });
   }
+
+  getThemeColor() {
+    return this.data$.subscribe((isDark) => {
+      if (isDark) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  }
 }

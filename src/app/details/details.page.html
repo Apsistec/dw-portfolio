@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Welcome</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()" [strong]="true" color="tertiary">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card style="height: 100%;" class="ion-no-margin">
+    <ion-card-header style="display: flex;">
+      <div style="margin-left: 70px;">
+        <ion-card-title>
+          {{ selectedJob.title }}
+        </ion-card-title>
+        <ion-card-subtitle>
+          {{ selectedJob.company }}
+        </ion-card-subtitle>
+        <ion-card-subtitle>
+          {{ selectedJob.dates }}
+        </ion-card-subtitle>
+      </div>
+      <ion-thumbnail style="position: absolute;float: right; margin: 10px;">
+        <ion-img [src]="selectedJob.logo"></ion-img>
+      </ion-thumbnail>
+    </ion-card-header>
+    <ion-card-content>
+      <ul>
+        <li *ngFor="let desc of selectedJob.description">{{ desc }}</li>
+      </ul>
+      <div class="image">
+        <img [src]="selectedJob.image" />
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

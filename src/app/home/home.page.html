@@ -10,9 +10,9 @@
             <h5 class="m3">Bringing Ideas to Life </h5>
           </ion-card>
           <app-hero-devices class="hero-image"></app-hero-devices>
-            <ion-button size="large" shape="round" color="primary" strong routerLink="/contact" class="hero-button">
-              Contact me
-            </ion-button>
+          <ion-button size="large" shape="round" color="tertiary" strong routerLink="/contact" class="hero-button">
+            Contact me
+          </ion-button>
         </ion-col>
       </ion-row>
     </section>
@@ -21,12 +21,14 @@
         <ion-col size-xs="12" size-sm="10" size-md="6" size-lg="4" size-xl="3" class="ion-align-items-center">
           <ion-card class="ion-text-center">
             <ion-card-header>
-              <ion-card-subtitle class="sofa">
-                A work in progress
-              </ion-card-subtitle>
               <ion-card-title class="title">
-                Software Development Skills & Tech Stack
+                <h3>
+                  Skills & Tech Stack
+                </h3>
               </ion-card-title>
+              <ion-card-subtitle class="sofa">
+                Interactive Visualizations
+              </ion-card-subtitle>
             </ion-card-header>
           </ion-card>
         </ion-col>
@@ -34,12 +36,33 @@
       <ion-row class="ion-justify-content-center">
         <ion-col size-xs="12" size-sm="10" size-md="6" size-lg="4" size-xl="3" class="ion-align-items-center">
           <ion-card>
-            <app-skills></app-skills>
+            <app-radar></app-radar>
           </ion-card>
         </ion-col>
         <ion-col size-xs="12" size-sm="10" size-md="6" size-lg="4" size-xl="3" class="ion-align-items-center">
           <ion-card>
             <app-gauges></app-gauges>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </section>
+    <section class="experience">
+      <ion-row class="ion-justify-content-center">
+        <ion-col class="ion-align-self-center">
+          <ion-card>
+            <ion-card-header class="ion-text-center">
+              <ion-card-title>
+                <h3>
+                  Developer Experience
+                </h3>
+              </ion-card-title>
+              <ion-card-subtitle>
+                Work History
+              </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <app-experience></app-experience>
+            </ion-card-content>
           </ion-card>
         </ion-col>
       </ion-row>
@@ -50,11 +73,16 @@
           <ion-card class="ion-text-center contact-card">
             <ion-card-header class="ion-text-center">
               <ion-card-title lines="none" class="title nameplate-info">
-                Douglas White
+                <h3>
+                  Douglas White
+                </h3>
               </ion-card-title>
+              <ion-card-subtitle>
+                Web Developer
+              </ion-card-subtitle>
             </ion-card-header>
             <ion-card-content>
-              <img height="200" width="200" src="../../assets/images/" class="myImage" alt="my picture" />
+              <img height="200" width="200" src="../../assets/images/me.jpg" class="myImage" alt="my picture" />
               <ion-item lines="none">
                 <ion-icon slot="start" color="secondary" name="call-sharp"></ion-icon>
                 &nbsp;
@@ -82,8 +110,8 @@
                   </a>
                 </ion-label>
               </ion-item>
-              <ion-button routerLink="/contact" color="primary" shape="round">
-                <ion-text>Contact Me</ion-text>
+              <ion-button routerLink="/contact" color="tertiary" shape="round">
+                <ion-text>View Resume</ion-text>
               </ion-button>
             </ion-card-content>
           </ion-card>

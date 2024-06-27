@@ -26,6 +26,12 @@ const routes: Routes = [
           import("./contact/contact.module").then((m) => m.ContactPageModule),
       },
       {
+        path: "details",
+        title: "Details",
+        loadChildren: () =>
+          import("./details/details.module").then((m) => m.DetailsPageModule),
+      },
+      {
         path: "",
         redirectTo: "/home",
         pathMatch: "full",

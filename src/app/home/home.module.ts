@@ -12,6 +12,7 @@ import { SkillsComponent } from "../components/skills/skills.component";
 import { GaugesComponent } from "../components/gauges/gauges.component";
 import { NgApexchartsModule } from "ng-apexcharts";
 import { ExperienceComponent } from "../components/experience/experience.component";
+import { RadarComponent } from "../components/radar/radar.component";
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ExperienceComponent } from "../components/experience/experience.compone
     HeroDevicesComponent,
     SkillsComponent,
     GaugesComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    RadarComponent,
   ],
 })
 export class HomePageModule {}

@@ -14,7 +14,7 @@
   text-align: left;
   left: 0;
   top: 100px;
-  background-color: rgba(var(--ion-color-tertiary-rgb), 0.6);
+  background-color: rgba(var(--ion-color-primary-rgb), 0.6);
   color: var(--ion-text-color);
   h1 {
     font-size: 3rem;
@@ -27,7 +27,7 @@
 
 .hero-image {
   position: absolute;
-  top:100px;
+  top: 100px;
   margin: 20px 70px;
   z-index: -1;
 }
@@ -66,30 +66,37 @@
 .hero-button {
   position: absolute;
   left: 10px;
-  top: 350px;
+  top: 400px;
 }
 
 .gauge-card {
   height: 400px;
 }
 
-.m1{
-  animation: intro .75s ease-in-out 1s;
+.m1 {
+  animation: intro 0.75s ease-in-out 1s;
 }
 
-.m2{
-  animation: intro .75s ease-in-out 1.25s; 
+.m2 {
+  animation: intro 0.75s ease-in-out 1.25s;
 }
 
-.m3{
-  animation: intro .75s ease-in-out 1.5s;
+.m3 {
+  animation: intro 0.75s ease-in-out 1.5s;
 }
 
 @keyframes intro {
   from {
     font-size: 22px;
   }
- to{
- }
+  to {
+  }
+}
 
+.experience {
+  height: calc(100vh - 48px);
+}
+
+ion-card {
+  border-radius: 15px;
 }
