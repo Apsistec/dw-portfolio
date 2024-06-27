@@ -15,14 +15,14 @@
   "screenshots": [
     {
       "src": "assets/screenshots/screenshot-large.png",
-      "sizes": "1904x963",
+      "sizes": "1912x869",
       "type": "image/png",
       "purpose": "any",
       "form_factor": "wide"
     },
     {
       "src": "assets/screenshots/screenshot-small.png",
-      "sizes": "640x480",
+      "sizes": "720x1470",
       "type": "image/png",
       "purpose": "any"
     }
