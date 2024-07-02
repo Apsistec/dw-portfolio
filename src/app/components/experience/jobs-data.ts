@@ -4,7 +4,7 @@ export const jobsData: Job[] = [
   {
     id: "1",
     image: "../../../assets/images/alaska-airlines-logo.webp",
-    logo: "../../../assets/images/insight_global_logo.jpeg",
+    logo: "../../../assets/images/insight_global_logo.webp",
     title: "Software Engineer",
     company: "Insight Global",
     dates: "Mar 2023 – Nov 2023",
@@ -16,8 +16,8 @@ export const jobsData: Job[] = [
   },
   {
     id: "2",
-    image: "../../../assets/images/klicktrack.png",
-    logo: "../../../assets/images/kt-logo.jpeg",
+    image: "../../../assets/images/klicktrack.webp",
+    logo: "../../../assets/images/kt-logo.webp",
     title: "Software Engineer",
     company: "KlickTrack",
     dates: "Mar 2022 – Oct 2022",
@@ -29,8 +29,8 @@ export const jobsData: Job[] = [
   },
   {
     id: "3",
-    logo: "../../../assets/images/ncqa-logo.jpeg",
-    image: "../../../assets/images/ncqa.png",
+    logo: "../../../assets/images/ncqa-logo.webp",
+    image: "../../../assets/images/ncqa.webp",
     title: "Software Engineer",
     company: "NCQA",
     dates: "Aug 2021 – Dec 2021",
@@ -42,8 +42,8 @@ export const jobsData: Job[] = [
   },
   {
     id: "4",
-    logo: "../../../assets/images/apsistec-logo.png",
-    image: "../../../assets/images/xfitness_studio.png",
+    logo: "../../../assets/images/apsistec-logo.webp",
+    image: "../../../assets/images/xfitness_studio.webp",
     title: "Freelance Developer",
     company: "ApsisTech",
     dates: "Apr 2020 – Jul 2021",
@@ -56,8 +56,8 @@ export const jobsData: Job[] = [
   },
   {
     id: "5",
-    image: "../../../assets/images/rankfantasysports.png",
-    logo: "../../../assets/images/RFS-logo.png",
+    image: "../../../assets/images/rankfantasysports.webp",
+    logo: "../../../assets/images/RFS-logo.webp",
     title: "Web Application Developer",
     company: "Rank Fantasy Sports",
     dates: "Aug 2018 – Apr 2020",
@@ -69,7 +69,7 @@ export const jobsData: Job[] = [
   },
   {
     id: "6",
-    logo: "../../../assets/images/rdag.jpeg",
+    logo: "../../../assets/images/rdag.webp",
     title: "Web Application Developer",
     company: "Reagor Dykes Auto Group",
     dates: "Feb 2017 – Aug 2018",

@@ -32,6 +32,7 @@ export type ChartOptions = {
   colors: any;
   legend: any;
   title: any;
+  subtitle: any;
 };
 
 @Component({
@@ -51,7 +52,7 @@ export class GaugesComponent implements OnInit {
       series: [
         {
           name: "Tech",
-          data: [20, 30, 40, 50, 60, 70],
+          data: [20, 30, 40, 50, 60, 70, 80],
         },
       ],
       chart: {
@@ -76,6 +77,7 @@ export class GaugesComponent implements OnInit {
         },
       },
       colors: [
+        "#9C0075",
         "#6C0009",
         "#6C6C09",
         "#006C09",
@@ -93,7 +95,14 @@ export class GaugesComponent implements OnInit {
         },
       },
       title: {
-        text: "Tech Stack Hierarchy",
+        text: "PWA Tech Stack",
+        align: "center",
+        style: {
+          color: this.themeService.getThemeIsDark() ? "grey" : "#000",
+        },
+      },
+      subtitle: {
+        text: "Ascending Hierarchy",
         align: "center",
         style: {
           color: this.themeService.getThemeIsDark() ? "grey" : "#000",
@@ -101,6 +110,7 @@ export class GaugesComponent implements OnInit {
       },
       xaxis: {
         categories: [
+          "Capacitor",
           "Ionic",
           "Angular",
           "TypeScript",
