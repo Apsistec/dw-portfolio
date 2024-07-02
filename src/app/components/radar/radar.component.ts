@@ -1,6 +1,7 @@
 import { style } from "@angular/animations";
 import { Component, ViewChild } from "@angular/core";
 import { ChartComponent } from "ng-apexcharts";
+import { map } from "rxjs";
 import { ThemeService } from "src/app/services/theme/theme.service";
 
 export type ChartOptions = {
@@ -13,7 +14,6 @@ export type ChartOptions = {
   xaxis: any;
   yaxis: any;
   legend: any;
-  grid: any;
 };
 
 @Component({
@@ -27,10 +27,6 @@ export class RadarComponent {
 
   constructor(private themeService: ThemeService) {
     this.chartOptions = {
-      grid: {
-        show: true,
-        borderColor: "var(--ion-color-medium)",
-      },
       series: [
         {
           name: "Angular",
@@ -61,14 +57,14 @@ export class RadarComponent {
       legend: {
         show: true,
         labels: {
-          colors: this.themeService.getIsDark() ? "#fff" : "#000",
+          colors: this.themeService.getThemeIsDark() ? "grey" : "#fff",
         },
       },
       title: {
         text: "Framework Usage (%) by Year",
         align: "center",
         style: {
-          color: this.themeService.getIsDark() ? "#fff" : "#000",
+          color: this.themeService.getThemeIsDark() ? "grey" : "#fff",
         },
       },
       stroke: {
@@ -83,14 +79,6 @@ export class RadarComponent {
         size: 5,
         useSeriesColors: true,
       },
-      yaxis: {
-        labels: {
-          show: true,
-          style: {
-            colors: "var(--ion-color-medium-tint)",
-          },
-        },
-      },
       xaxis: {
         categories: [
           "2017",
@@ -102,18 +90,25 @@ export class RadarComponent {
           "2023",
           "2024",
         ],
-        labels: {
-          show: true,
-          colors: this.themeService.getIsDark() ? "#fff" : "#000",
-        },
-        title: {
-          text: "Year",
-        },
         dataLabels: {
           enabled: true,
           background: {
             enabled: true,
             borderRadius: 2,
+          },
+        },
+        labels: {
+          style: {
+            colors: [
+              "grey",
+              "grey",
+              "grey",
+              "grey",
+              "grey",
+              "grey",
+              "grey",
+              "grey",
+            ],
           },
         },
       },

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { arrayData } from "./data-series";
 import { ThemeService } from "src/app/services/theme/theme.service";
+import { map, Subscription } from "rxjs";
 
 type ApexXAxis = {
   type?: "category" | "datetime" | "numeric";
@@ -13,14 +14,7 @@ type ApexXAxis = {
   };
 };
 
-var colors = [
-  "#6C0009",
-  "#6C6C09",
-  "#006C09",
-  "#006C75",
-  "#000075",
-  "#6C0075",
-];
+var colors = ["#6C0009", "#6C6C09", "#006C09", "#006C75", "#000075", "#6C0075"];
 
 export type ChartOptions = {
   series: any;
@@ -66,9 +60,6 @@ window.Apex = {
   styleUrls: ["./skills.component.scss"],
 })
 export class SkillsComponent implements OnInit {
-  // @ViewChild("chart")
-  // chart!: ChartComponent;
-
   dataSet = arrayData;
   public chartOptions!: Partial<ChartOptions>;
   public chartQuarterOptions!: Partial<ChartOptions>;
@@ -129,7 +120,7 @@ export class SkillsComponent implements OnInit {
         enabled: true,
         textAnchor: "start",
         style: {
-          colors: [this.themeService.getThemeColor() ? "#fff" : "#000"],
+          colors: [this.themeService.getThemeIsDark() ? "#fff" : "#000"],
         },
         formatter: function (val: any, opt: any) {
           return opt.w.globals.labels[opt.dataPointIndex];
@@ -172,14 +163,14 @@ export class SkillsComponent implements OnInit {
         text: "Skills",
         offsetX: 15,
         style: {
-          color: this.themeService.getThemeColor() ? "#fff" : "#000",
+          color: this.themeService.getThemeIsDark() ? "#fff" : "#000",
         },
       },
       subtitle: {
         text: "(Click on bar to see details)",
         offsetX: 15,
         style: {
-          color: this.themeService.getThemeColor() ? "#fff" : "#000",
+          color: this.themeService.getThemeIsDark() ? "#fff" : "#000",
         },
       },
       yaxis: {
@@ -234,7 +225,7 @@ export class SkillsComponent implements OnInit {
         text: "Quarterly Results",
         align: "center",
         style: {
-          color: this.themeService.getThemeColor() ? "#fff" : "#000",
+          color: this.themeService.getThemeIsDark() ? "#fff" : "#000",
         },
       },
       tooltip: {
@@ -299,7 +290,7 @@ export class SkillsComponent implements OnInit {
 
   public updateQuarterChart(
     sourceChart: any,
-    destChartIDToUpdate: string | number,
+    destChartIDToUpdate: string | number
   ) {
     var series = [];
     var seriesIndex = 0;

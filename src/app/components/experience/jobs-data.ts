@@ -4,7 +4,7 @@ export const jobsData: Job[] = [
   {
     id: "1",
     image: "../../../assets/images/alaska-airlines-logo.webp",
-    logo: "../../../assets/images/insight.png",
+    logo: "../../../assets/images/insight_global_logo.jpeg",
     title: "Software Engineer",
     company: "Insight Global",
     dates: "Mar 2023 – Nov 2023",
@@ -17,7 +17,7 @@ export const jobsData: Job[] = [
   {
     id: "2",
     image: "../../../assets/images/klicktrack.png",
-    logo: "../../../assets/images/kt-blue.jpeg",
+    logo: "../../../assets/images/kt-logo.jpeg",
     title: "Software Engineer",
     company: "KlickTrack",
     dates: "Mar 2022 – Oct 2022",
@@ -29,7 +29,7 @@ export const jobsData: Job[] = [
   },
   {
     id: "3",
-    logo: "../../../assets/images/ncqa.jpeg",
+    logo: "../../../assets/images/ncqa-logo.jpeg",
     image: "../../../assets/images/ncqa.png",
     title: "Software Engineer",
     company: "NCQA",
@@ -57,7 +57,7 @@ export const jobsData: Job[] = [
   {
     id: "5",
     image: "../../../assets/images/rankfantasysports.png",
-    logo: "../../../assets/images/RFS-logo.jpeg",
+    logo: "../../../assets/images/RFS-logo.png",
     title: "Web Application Developer",
     company: "Rank Fantasy Sports",
     dates: "Aug 2018 – Apr 2020",

@@ -19,32 +19,21 @@ export class AppComponent implements OnInit {
   constructor(
     public pwa: PwaService,
     public toastController: ToastController,
-    private themeService: ThemeService  ) {}
+    private themeService: ThemeService
+  ) {}
 
   installPwa(): void {
     this.pwa.promptEvent.prompt();
   }
 
   ngOnInit() {
-    // Use matchMedia to check the user preference
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-
-    // Initialize the dark palette based on the initial
-    // value of the prefers-color-scheme media query
-    this.initializeDarkPalette(prefersDark.matches);
-
-    // Listen for changes to the prefers-color-scheme media query
-    prefersDark.addEventListener("change", (mediaQuery) =>
-      this.initializeDarkPalette(mediaQuery.matches)
-    );
-
-    this.themeService.data$.subscribe((data) => {
+    this.themeService.theme$.subscribe((data) => {
       this.paletteToggle = data?.isDark;
     });
 
     setTimeout(() => {
       this.presentToast();
-    }, 3000);
+    }, 2000);
   }
 
   async presentToast() {
@@ -56,7 +45,7 @@ export class AppComponent implements OnInit {
         cssClass: "intro-toast",
         icon: "logo-ionic",
         color: "medium",
-        duration: 5000,
+        duration: 2500,
         buttons: [
           {
             icon: "close",
@@ -72,21 +61,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  // Check/uncheck the toggle and update the palette based on isDark
-  initializeDarkPalette(isDark: boolean) {
-    const newData: any = { isDark };
-    this.themeService.setData(newData);
-    this.toggleDarkPalette(isDark);
-  }
-
-  // Listen for the toggle check/uncheck to toggle the dark palette
   toggleChange(ev: { detail: { checked: any } }) {
-    this.toggleDarkPalette(ev.detail.checked);
+    this.themeService.toggleChange(ev.detail.checked);
   }
-
-  // Add or remove the "ion-palette-dark" class on the html element
-  toggleDarkPalette(shouldAdd: boolean | undefined) {
-    document.documentElement.classList.toggle("ion-palette-dark", shouldAdd);
-  }
-
 }

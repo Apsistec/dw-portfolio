@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import {
   ChartComponent,
   ApexAxisChartSeries,
@@ -7,8 +7,9 @@ import {
   ApexDataLabels,
   ApexLegend,
   ApexPlotOptions,
-  ApexTitleSubtitle
+  ApexTitleSubtitle,
 } from "ng-apexcharts";
+import { map, Subject, Subscription } from "rxjs";
 import { ThemeService } from "src/app/services/theme/theme.service";
 
 // export type ChartOptions = {
@@ -27,6 +28,7 @@ export type ChartOptions = {
   dataLabels: any;
   plotOptions: any;
   xaxis: any;
+  yaxis: any;
   colors: any;
   legend: any;
   title: any;
@@ -38,31 +40,40 @@ export type ChartOptions = {
   styleUrls: ["./gauges.component.scss"],
 })
 export class GaugesComponent implements OnInit {
-
   @ViewChild("chart") chart!: ChartComponent;
   public chartOptions!: Partial<ChartOptions>;
+  isDark!: string;
 
   constructor(private themeService: ThemeService) {}
-  
+
   ngOnInit(): void {
     this.chartOptions = {
       series: [
         {
           name: "Tech",
-          data: [200, 300, 400, 500, 600, 700]
-        }
+          data: [20, 30, 40, 50, 60, 70],
+        },
       ],
       chart: {
         type: "bar",
-        height: 350
+        height: 350,
       },
       plotOptions: {
         bar: {
           horizontal: true,
           distributed: true,
           barHeight: "80%",
-          isFunnel: true
-        }
+          isFunnel: true,
+        },
+      },
+      yaxis: {
+        show: true,
+
+        labels: {
+          formatter: function (val: any) {
+            return val + "%";
+          },
+        },
       },
       colors: [
         "#6C0009",
@@ -78,14 +89,14 @@ export class GaugesComponent implements OnInit {
           return opt.w.globals.labels[opt.dataPointIndex];
         },
         dropShadow: {
-          enabled: true
-        }
+          enabled: true,
+        },
       },
       title: {
         text: "Tech Stack Hierarchy",
         align: "center",
         style: {
-          color: this.themeService.getThemeColor() ? "#fff" : "#000",
+          color: this.themeService.getThemeIsDark() ? "grey" : "#000",
         },
       },
       xaxis: {
@@ -96,12 +107,11 @@ export class GaugesComponent implements OnInit {
           "JavaScript",
           "CSS",
           "HTML",
-        ]
+        ],
       },
       legend: {
-        show: false
-      }
+        show: false,
+      },
     };
-      
   }
 }
