@@ -12,17 +12,16 @@ export class ResumePage implements OnInit, OnDestroy {
   theme!: string;
   themeSub$!: Subscription;
 
-
   constructor(private themeService: ThemeService) {}
 
   ngOnInit() {
-    this.themeSub$ =this.themeService.theme$.subscribe((theme) => {
+    this.themeSub$ = this.themeService.theme$.subscribe((theme) => {
       if (theme?.isDark) this.theme = "dark";
       else this.theme = "light";
     });
   }
 
   ngOnDestroy(): void {
-      this.themeSub$.unsubscribe();
+    this.themeSub$.unsubscribe();
   }
 }

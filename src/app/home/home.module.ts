@@ -14,7 +14,6 @@ import { NgApexchartsModule } from "ng-apexcharts";
 import { ExperienceComponent } from "../components/experience/experience.component";
 import { RadarComponent } from "../components/radar/radar.component";
 
-
 @NgModule({
   imports: [
     CommonModule,

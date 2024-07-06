@@ -9,9 +9,9 @@
           </ion-card-header>
           <ion-card-content>
             <div class="ion-text-center">
-                <small>
-                  Note: I will never sell your information.
-                </small>
+              <small>
+                Note: I will never sell your information.
+              </small>
             </div>
             <form [formGroup]="emailForm" novalidate (ngSubmit)="onSubmit()">
               <ion-input label="Name" placeHolder="Name is required" errorText="Please enter full name" counter="true"
@@ -25,9 +25,9 @@
                 <ion-icon slot="start" name="mail" aria-hidden="true"></ion-icon>
               </ion-input>
               <ion-textarea placeHolder="Message required" errorText="Please enter a longer message" label="Message"
-              fill="outline" counter="true" maxlength="1000" autocapitalize="on" autocorrect="on" autoGrow="true"
-              wrap="soft" labelPlacement="stacked" formControlName="message" message>
-              <ion-icon slot="start" name="pencil" aria-hidden="true"></ion-icon>
+                fill="outline" counter="true" maxlength="1000" autocapitalize="on" autocorrect="on" autoGrow="true"
+                wrap="soft" labelPlacement="stacked" formControlName="message" message>
+                <ion-icon slot="start" name="pencil" aria-hidden="true"></ion-icon>
               </ion-textarea>
               <div class="ion-text-center">
                 <ion-button type="submit" shape="round" color="primary" strong>

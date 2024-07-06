@@ -11,7 +11,7 @@ export class PwaService {
 
   constructor(
     private swUpdate: SwUpdate,
-    public toast: ToastController,
+    public toast: ToastController
   ) {}
 
   async updateSW() {

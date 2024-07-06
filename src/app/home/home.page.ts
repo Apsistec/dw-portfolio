@@ -19,7 +19,7 @@ export class HomePage {
     this.showBackToTopFab =
       (ev as CustomEvent).detail.scrollTop > 250 ? true : false;
   }
- 
+
   scrollToId(id: any) {
     const element: any = document.getElementById(id);
     this.content.scrollToPoint(0, element.offsetTop - 45, 750);

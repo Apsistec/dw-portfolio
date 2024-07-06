@@ -20,7 +20,7 @@ export class ContactPage {
       Validators.required,
       Validators.minLength(6),
       Validators.pattern(
-        "[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9]+.[a-zA-Z]+",
+        "[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9]+.[a-zA-Z]+"
       ),
       Validators.email,
     ]),
@@ -36,7 +36,7 @@ export class ContactPage {
   constructor(
     private toast: ToastController,
     private alert: AlertController,
-    private fun: AngularFireFunctions,
+    private fun: AngularFireFunctions
   ) {}
 
   async onSubmit() {

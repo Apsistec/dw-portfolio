@@ -1,15 +1,5 @@
-import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import {
-  ChartComponent,
-  ApexAxisChartSeries,
-  ApexChart,
-  ApexXAxis,
-  ApexDataLabels,
-  ApexLegend,
-  ApexPlotOptions,
-  ApexTitleSubtitle,
-} from "ng-apexcharts";
-import { map, Subject, Subscription } from "rxjs";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { ChartComponent } from "ng-apexcharts";
 import { ThemeService } from "src/app/services/theme/theme.service";
 
 // export type ChartOptions = {
