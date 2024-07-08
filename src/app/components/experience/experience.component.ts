@@ -1,8 +1,7 @@
-import { Component, Input, OnInit, ViewChild } from "@angular/core";
-import { IonModal, ModalController, NavController } from "@ionic/angular";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { IonModal, ModalController } from "@ionic/angular";
 import { Job } from "src/app/models/job.model";
 import { jobsData } from "./jobs-data";
-import { OverlayEventDetail } from "@ionic/core";
 import { DetailsPage } from "src/app/details/details.page";
 
 @Component({
@@ -17,7 +16,6 @@ export class ExperienceComponent implements OnInit {
     "This modal example uses triggers to automatically open a modal when the button is clicked.";
 
   constructor(
-    private navCtrl: NavController,
     public modalCtrl: ModalController
   ) {}
 
@@ -33,7 +31,13 @@ export class ExperienceComponent implements OnInit {
       componentProps: {
         selectedJob: job,
       },
+      id: job.id.toString(),
       cssClass: "experience-modal",
+    });
+    modal.onDidDismiss().then((job) => {
+      if(job){
+        this.openModal(this.jobs[job.data])
+      }
     });
     modal.present();
   }

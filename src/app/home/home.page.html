@@ -23,7 +23,7 @@
             <ion-card-header>
               <ion-card-title class="title">
                 <h3>
-                  Skills & Tech Stack
+                  Tech Stack
                 </h3>
               </ion-card-title>
               <ion-card-subtitle class="sofa">
@@ -42,6 +42,20 @@
         <ion-col size-xs="12" size-sm="10" size-md="6" size-lg="4" size-xl="3" class="ion-align-items-center">
           <ion-card>
             <app-gauges></app-gauges>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size-xs="12" size-sm="10" size-md="6" size-lg="4" size-xl="3" class="ion-align-items-center">
+          <ion-card>
+            <ion-card-header class="ion-text-center">
+              <ion-card-title>
+                Developer Skills
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <app-skills></app-skills>
+            </ion-card-content>
           </ion-card>
         </ion-col>
       </ion-row>
@@ -120,10 +134,12 @@
     </section>
   </ion-grid>
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
-    <ion-fab-button *ngIf="scrollEnd" id="up" [hidden]="!showBackToTopFab" class="up" size="small"
-      (click)="scrollToTop()" color="tertiary">
+    @if (scrollEnd) {
+    <ion-fab-button id="up" [hidden]="!showBackToTopFab" class="up" size="small" (click)="scrollToTop()"
+      color="tertiary">
       <ion-icon name="chevron-up"></ion-icon>
     </ion-fab-button>
+    }
   </ion-fab>
   <app-footer class="footer"></app-footer>
 </ion-content>

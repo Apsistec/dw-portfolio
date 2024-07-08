@@ -25,11 +25,23 @@
     </ion-card-header>
     <ion-card-content>
       <ul>
-        <li *ngFor="let desc of selectedJob.description">{{ desc }}</li>
+        @for (desc of selectedJob.description; track desc) {
+          <li>{{ desc }}</li>
+        }
       </ul>
       <div class="image">
         <img [src]="selectedJob.image" />
       </div>
+      <ion-fab *ngIf="selectedJob.id > 1" edge="true" horizontal="start" vertical="center">
+          <ion-fab-button size="small" (click)="previous(selectedJob)">
+            <ion-icon name="chevron-back"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+      <ion-fab *ngIf="selectedJob.id < jobs.length" edge="true" horizontal="end" vertical="center">
+          <ion-fab-button size="small" (click)="next(selectedJob)">
+            <ion-icon  name="chevron-forward"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
     </ion-card-content>
   </ion-card>
 </ion-content>

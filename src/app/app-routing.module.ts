@@ -8,6 +8,11 @@ const routes: Routes = [
     component: TabsComponent,
     children: [
       {
+        path: "",
+        redirectTo: "/home",
+        pathMatch: "full",
+      },
+      {
         path: "home",
         title: "Home",
         loadChildren: () =>
@@ -30,11 +35,6 @@ const routes: Routes = [
         title: "Details",
         loadChildren: () =>
           import("./details/details.module").then((m) => m.DetailsPageModule),
-      },
-      {
-        path: "",
-        redirectTo: "/home",
-        pathMatch: "full",
       },
     ],
   },

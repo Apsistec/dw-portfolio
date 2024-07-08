@@ -1,48 +1,25 @@
-#wrap {
-    position: relative;
-  
-  }
-  
-  #chart-year,
-  #chart-quarter {
-    box-shadow: none;
-  }
-  
-  #chart-year {
-    width: 50%;
-    float: left;
-    position: relative;
-    transition: 1s ease transform;
-    z-index: 3;
-  }
-  
-  #chart-year.chart-quarter-activated {
-    max-width: 50%;
-    transform: translateX(0);
-    transition: 1s ease transform;
-  }
-  
-  #chart-quarter {
-    display: none;
-    float: left;
-    position: relative;
-    z-index: -2;
-    transition: 1s ease transform;
-  }
-  
-  #chart-quarter.active {
-    max-width: 50%;
-    display: block;
-    transition: 1.1s ease-in-out transform;
-    transform: translateX(0);
-    z-index: 1;
-  }
-  
-  // @media screen and (min-width: 240px) {
-    #chart-year {
-      transform: translateX(50%);
-    }
-    #chart-quarter {
-      transform: translateX(-50%);
-    }
-  // }
+details {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+summary {
+  font-weight: bold;
+}
+
+details[open] summary {
+  /* Optional styling for open state of summary */
+  // background-color: var(--ion-text-color);
+}
+
+/* Specific styles for details content */
+.skills-details {
+  display: none; /* Initially hidden */
+}
+
+details[open] .job-details {
+  display: block; /* Display details when open */
+}
