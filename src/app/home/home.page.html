@@ -134,7 +134,7 @@
     </section>
   </ion-grid>
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
-    @if (scrollEnd) {
+    @if (showBackToTopFab) {
     <ion-fab-button id="up" [hidden]="!showBackToTopFab" class="up" size="small" (click)="scrollToTop()"
       color="tertiary">
       <ion-icon name="chevron-up"></ion-icon>
