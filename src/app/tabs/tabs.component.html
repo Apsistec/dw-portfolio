@@ -1,5 +1,9 @@
 <ion-tabs>
-  <ion-tab-bar slot="bottom">
+  <ion-tab-bar [slot]="tabBarLocation">
+    <img *ngIf="isDesktop" src="../../assets/images/computer-code.svg" alt="computer" routerLink="/"
+      style="margin: 0 10px; height: 42px; position: absolute; left: 0;">
+    <h4 *ngIf="isDesktop" style="position: absolute; left: 60px; font-weight: bold;"> Douglas White
+    </h4>
     <ion-tab-button tab="home">
       <ion-icon aria-hidden="true" name="home"></ion-icon>
       <ion-label>
@@ -20,5 +24,8 @@
         Contact
       </ion-label>
     </ion-tab-button>
+    <ion-icon *ngIf="isDesktop" color="warning" name="sunny" style="position: absolute; right: 0; margin-right: 85px;"></ion-icon>
+    <ion-toggle *ngIf="isDesktop" checked="palletToggle" class="toggle" style="position: absolute; margin-right: 30px; right: 0;" (ionChange)= "toggleChange($event)"></ion-toggle>
+    <ion-icon  *ngIf="isDesktop" style="position: absolute; right: 15px; " name="moon"></ion-icon>
   </ion-tab-bar>
 </ion-tabs>

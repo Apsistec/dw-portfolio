@@ -1,9 +1,9 @@
 <ion-list>
   @for (job of jobs; track job.id) {
-    <ion-item>
+    <ion-item (click)="openModal(job)">
       <ion-label>{{ job.title }}</ion-label>
       <ion-label>{{ job.dates }}</ion-label>
-      <ion-button slot="end" id="open-modal" (click)="openModal(job)">Details</ion-button>
+      <ion-button slot="end" id="open-modal" >Details</ion-button>
     </ion-item>
   }
 </ion-list>

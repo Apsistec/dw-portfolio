@@ -1,6 +1,6 @@
 import { Component, OnInit, signal, VERSION } from "@angular/core";
 import { PwaService } from "./services/pwa/pwa.service";
-import { ToastController } from "@ionic/angular";
+import { Platform, ToastController } from "@ionic/angular";
 import { ThemeService } from "./services/theme/theme.service";
 
 @Component({
@@ -16,10 +16,13 @@ export class AppComponent implements OnInit {
   showBackButton: boolean = false;
   playToast = signal(true);
   currentPath!: string;
+  notDesktop!: boolean;
+
   constructor(
     public pwa: PwaService,
     public toastController: ToastController,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private platform: Platform
   ) {}
 
   installPwa(): void {
@@ -27,6 +30,12 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(this.platform.is('desktop')){
+      this.notDesktop = false;
+    } else {
+      this.notDesktop = true;
+    }
+
     this.themeService.theme$.subscribe((data) => {
       this.paletteToggle = data?.isDark;
     });
