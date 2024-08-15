@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from "@angular/core";
 import { Platform } from "@ionic/angular";
 import { ThemeService } from "../services/theme/theme.service";
+import { AppComponent } from "../app.component";
 
 @Component({
   selector: "app-tabs",
@@ -26,5 +27,14 @@ export class TabsComponent implements OnInit {
 
   toggleChange(ev: { detail: { checked: any } }) {
     this.themeService.toggleChange(ev.detail.checked);
+  }
+  constructor(private appComponent: AppComponent) {}
+
+  get canInstall(): boolean {
+    return this.appComponent.canInstall();
+  }
+
+  installApp() {
+    this.appComponent.initiateInstall();
   }
 }

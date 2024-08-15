@@ -24,6 +24,9 @@
         Contact
       </ion-label>
     </ion-tab-button>
+    <ion-button (click)="installApp()" [disabled]="!canInstall">
+      Install App
+    </ion-button>
     <ion-icon *ngIf="isDesktop" color="warning" name="sunny" style="position: absolute; right: 0; margin-right: 85px;"></ion-icon>
     <ion-toggle *ngIf="isDesktop" checked="palletToggle" class="toggle" style="position: absolute; margin-right: 30px; right: 0;" (ionChange)= "toggleChange($event)"></ion-toggle>
     <ion-icon  *ngIf="isDesktop" style="position: absolute; right: 15px; " name="moon"></ion-icon>
