@@ -14,14 +14,14 @@
   "orientation": "portrait-primary",
   "screenshots": [
     {
-      "src": "assets/screenshots/screenshot-large.webp",
+      "src": "assets/screenshots/portfolio-pwa.webp",
       "sizes": "1912x869",
       "type": "image/webp",
       "purpose": "any",
       "form_factor": "wide"
     },
     {
-      "src": "assets/screenshots/screenshot-small.webp",
+      "src": "assets/screenshots/portfolio-mobile.webp",
       "sizes": "720x1470",
       "type": "image/webp",
       "purpose": "any"
