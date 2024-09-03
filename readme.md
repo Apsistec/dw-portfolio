@@ -1,35 +1,32 @@
 <a name="readme-top"></a>
 
-butors][contributors-shield]][contributors-url]
+<div align="center">
+
+[![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
 <!-- PROJECT LOGO -->
 <br />
-<div align="center">
   <a href="https://github.com/apsistec/dw-portfolio">
     <img src="src/assets/images/computer-code.svg" alt="Logo" width="80" height="80">
   </a>
   <h3 align="center">dw-portfolio</h3>
-  <p align="center">
+  <div style="width: 60%; padding: 10px;">
+  <p align="left">
     An interactive portfolio PWA showcasing James Douglas White's skills and experience with the latest web technologies. Visitors can explore my past projects, gaining insights into my capabilities in areas like Angular, Ionic, Firebase, and GCP. The PWA design ensures a seamless and performant experience across any device, even when offline.
-    <br />
     </p>
-
-[View James Douglas White's Resume](./src/assets/Resume.md)
-
-<p>
+   <a src="./src/assets/Resume.md">View James Douglas White's Resume</a>
+   <br />
+   <br />
     <a href="https://douglaswhite.app">View Demo</a>
     ·
     <a href="https://github.com/apsistec/dw-portfolio/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
     <a href="https://github.com/apsistec/dw-portfolio/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
-  </p>
+    </div>
 </div>
-
-## TABLE OF CONTENTS
-
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -68,13 +65,6 @@ butors][contributors-shield]][contributors-url]
 - [Angular](https://angular.io)
 - [Firebase](https://firebase.com)
 - [Sendgrid](https://sendgrid.com)
-
-## About The Project
-
-A portfolio for Douglas White presenting some of the functionality available in
-an Ionic progressive web application.
-
-### View
 
 ### Built With
 
@@ -263,7 +253,7 @@ Douglas White
 
 [avatar-url]: https://avatars0.githubusercontent.com/u/6438623?s=400&u=aaaf57f08f5fff530672ecd3a18f26a53f704850&v=4
 [angular-url]: https://angular.dev/
-[ionic-url]: https://angular.dev/
+[ionic-url]: https://ionicframework.com/
 [firebase-url]: https://firebase.com/
 [contributors-shield]: https://img.shields.io/github/contributors/apsistec/dw-portfolio.svg?style=for-the-badge
 [contributors-url]: https://github.com/apsistec/dw-portfolio/graphs/contributors
@@ -276,5 +266,5 @@ Douglas White
 [license-shield]: https://img.shields.io/github/license/apsistec/dw-portfolio.svg?style=for-the-badge
 [license-url]: https://github.com/apsistec/dw-portfolio/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/apsistec
+[linkedin-url]: https://linkedin.com/in/jamesdouglaswhite
 [sendgrid-url]: https://sendgrid.co
