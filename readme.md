@@ -17,7 +17,7 @@
   <p align="left">
     An interactive portfolio PWA showcasing James Douglas White's skills and experience with the latest web technologies. Visitors can explore my past projects, gaining insights into my capabilities in areas like Angular, Ionic, Firebase, and GCP. The PWA design ensures a seamless and performant experience across any device, even when offline.
     </p>
-   <a href="src/assets/docs/resume.md">View James Douglas White's Resume</a>
+   <a href="https://github.com/apsistec/dw-portfolio/src/assets/docs/resume.md">View James Douglas White's Resume</a>
    <br />
    <br />
     <a href="https://douglaswhite.app">View Demo</a>
@@ -29,16 +29,8 @@
 </div>
 <details>
   <summary>Table of Contents</summary>
-  <ol>
+  <ul>
  <li><a href="#tech-stack">Tech Stack</a></li>
- <li>
- <a href="#about-the-project">About the Project</a>
- <ul>
-   <li>
-   <a href="#built-with">Built With</a>
-   </li>
- </ul>
- </li>
 <li>
 <a href="#getting-started">Getting Started</a>
 </li>
@@ -56,7 +48,7 @@
  <li><a href="#license">License</a></li>
  <li><a href="#contributors">Contributors</a></li>
  <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
+  </ul>
 </details>
 
 ## Tech Stack
@@ -65,14 +57,6 @@
 - [Angular](angular-url)
 - [Firebase](firebase-url)
 - [Sendgrid](https://sendgrid.com)
-
-### Built With
-
-- ![Angular](./src/assets/logos/logo-angular.svg | width=300)
-- ![Ionic](./src/assets/logos/logo-ionic.svg | width=300)
-- ![Firebase](./src/assets/logos/logo-firebase.svg | width=300)
-
-   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started
 
@@ -224,7 +208,7 @@ Project Link: [https://github.com/apsistec/dw-portfolio](https://github.com/apsi
 
 ## Contributors
 
-![**Apsistec**][avatar-url]
+<img src="https://avatars0.githubusercontent.com/u/6438623?s=400&u=aaaf57f08f5fff530672ecd3a18f26a53f704850&v=4" width=200>
 
 Douglas White
 
@@ -234,7 +218,7 @@ Douglas White
 
 - [www.douglaswhite.app](https://douglaswhite.app)
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![linkedin-shield]][linkedin-url]
 
 ## Acknowledgments
 
