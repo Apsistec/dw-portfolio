@@ -17,7 +17,7 @@
   <p align="left">
     An interactive portfolio PWA showcasing James Douglas White's skills and experience with the latest web technologies. Visitors can explore my past projects, gaining insights into my capabilities in areas like Angular, Ionic, Firebase, and GCP. The PWA design ensures a seamless and performant experience across any device, even when offline.
     </p>
-   <a href="https://github.com/apsistec/dw-portfolio/src/assets/docs/resume.md">View James Douglas White's Resume</a>
+   <a href="https://github.com/apsistec/dw-portfolio/blob/main/src/assets/docs/resume.md">View James Douglas White's Resume</a>
    <br />
    <br />
     <a href="https://douglaswhite.app">View Demo</a>
