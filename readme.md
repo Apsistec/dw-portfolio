@@ -61,16 +61,16 @@
 
 ## Tech Stack
 
-- [Ionic](https://ionicframework.com)
-- [Angular](https://angular.io)
-- [Firebase](https://firebase.com)
+- [Ionic](ionic-url)
+- [Angular](angular-url)
+- [Firebase](firebase-url)
 - [Sendgrid](https://sendgrid.com)
 
 ### Built With
 
-- ![Angular](Angular-url)
-- ![Ionic](Ionic-url)
-- ![Firebase](firebase-url)
+- ![Angular](./src/assets/logos/logo-angular.svg | width=300)
+- ![Ionic](./src/assets/logos/logo-ionic.svg | width=300)
+- ![Firebase](./src/assets/logos/logo-firebase.svg | width=300)
 
    <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
