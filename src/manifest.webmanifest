@@ -1,11 +1,10 @@
 {
-  "name": "Douglas' Portfolio PWA",
-  "short_name": "Douglas' PWA",
+  "name": "Douglas' Portfolio App",
+  "short_name": "Douglas' Portfolio",
   "theme_color": "#00435e",
-  "categories": ["utilities", "productivity"],
   "lang": "en-US",
   "dir": "ltr",
-  "description": "Explore my interactive portfolio PWA! See projects built with Angular, Ionic, Firebase & GCP. Works offline for a smooth experience on any device.",
+  "description": "Douglas White's portfolio - A progressive web app built with the latest versions of Angular and Ionic/Capacitor, installable on any device. Powered by Firebase and Google Cloud Platform.",
   "background_color": "#111111",
   "display": "standalone",
   "scope": "./",
@@ -73,9 +72,9 @@
   ],
   "shortcuts": [
     {
-      "name": "View resume",
+      "name": "Access resume",
       "short_name": "Resume",
-      "description": "View Douglas White's resume",
+      "description": "View, download, and/or print Douglas White's resume.",
       "url": "/resume",
       "icons": [
         {
@@ -87,9 +86,9 @@
       ]
     },
     {
-      "name": "Contact Douglas",
-      "short_name": "Contact",
-      "description": "Send Douglas White a message",
+      "name": "Send message",
+      "short_name": "Message",
+      "description": "Send contact information and/or a message about the company, project and position available.",
       "url": "/contact",
       "icons": [
         {

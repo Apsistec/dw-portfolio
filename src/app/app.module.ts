@@ -1,4 +1,4 @@
-import { NgModule, isDevMode } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, isDevMode } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouteReuseStrategy } from "@angular/router";
 
@@ -15,6 +15,7 @@ import { AngularFireFunctionsModule } from "@angular/fire/compat/functions";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [AppComponent, TabsComponent],
   imports: [
     BrowserModule,

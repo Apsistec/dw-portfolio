@@ -25,6 +25,11 @@
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
+    "optimizeDeps": {
+      "exclude": [
+        "ion-toast"
+      ]
+    },
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
