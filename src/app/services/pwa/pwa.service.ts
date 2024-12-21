@@ -10,7 +10,7 @@ export class PwaService {
 
   constructor(
     private updates: SwUpdate,
-    public toast: ToastController,
+    // public toast: ToastController,
     private alert: AlertController
   ) {}
 

@@ -1,18 +1,20 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, isDevMode } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouteReuseStrategy } from "@angular/router";
-
 import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
-
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { TabsComponent } from "./tabs/tabs.component";
 import { NgxExtendedPdfViewerModule } from "ngx-extended-pdf-viewer";
 import { environment } from "src/environments/environment";
-import { AngularFireModule } from "@angular/fire/compat";
-import { AngularFireFunctionsModule } from "@angular/fire/compat/functions";
+import { initializeApp } from 'firebase/app';
+import { Firestore } from '@angular/fire/firestore';
+import { Functions } from '@angular/fire/functions';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+
+const app = initializeApp(environment.firebaseConfig);
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -26,17 +28,14 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
       registrationStrategy: "registerWhenStable:30000",
     }),
     NgxExtendedPdfViewerModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireFunctionsModule,
     BrowserAnimationsModule,
-    ServiceWorkerModule.register("ngsw-worker.js", {
-      enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: "registerWhenStable:30000",
-    }),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig },
+    Firestore,
+    Functions
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

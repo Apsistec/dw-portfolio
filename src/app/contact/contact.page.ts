@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { AlertController, ToastController } from "@ionic/angular";
-import { AngularFireFunctions } from "@angular/fire/compat/functions";
+import { Functions, httpsCallable } from '@angular/fire/functions';
 
 interface MessageResult {
   header: string;
@@ -35,9 +35,9 @@ export class ContactPage {
   res!: MessageResult;
 
   constructor(
-    private toast: ToastController,
+    private toastController: ToastController,
     private alert: AlertController,
-    private fun: AngularFireFunctions
+    private fun: Functions
   ) {}
 
   async onSubmit() {
@@ -69,7 +69,7 @@ export class ContactPage {
           email: controls.email,
           message: controls.message,
         }).subscribe(async (res: MessageResult) => {
-          const toaster = await this.toast.create({
+          const toaster = await this.toastController.create({
             header: res.header,
             message: res.message,
             cssClass: "successT",

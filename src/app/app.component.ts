@@ -2,6 +2,8 @@ import { Component, OnInit, signal, VERSION } from "@angular/core";
 import { PwaService } from "./services/pwa/pwa.service";
 import { Platform, ToastController } from "@ionic/angular";
 import { ThemeService } from "./services/theme/theme.service";
+import { addIcons } from 'ionicons';
+import { sunny, moon, mail, home, document } from 'ionicons/icons';
 
 @Component({
     selector: "app-root",
@@ -26,7 +28,9 @@ export class AppComponent implements OnInit {
     public toastController: ToastController,
     private themeService: ThemeService,
     private platform: Platform
-  ) {}
+  ) {
+    addIcons({ sunny, moon, mail, home, document });
+  }
 
   ngOnInit() {
     this.initializeApp();
