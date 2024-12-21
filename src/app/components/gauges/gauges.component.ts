@@ -26,9 +26,10 @@ export type ChartOptions = {
 };
 
 @Component({
-  selector: "app-gauges",
-  templateUrl: "./gauges.component.html",
-  styleUrls: ["./gauges.component.scss"],
+    selector: "app-gauges",
+    templateUrl: "./gauges.component.html",
+    styleUrls: ["./gauges.component.scss"],
+    standalone: false
 })
 export class GaugesComponent implements OnInit {
   @ViewChild("chart") chart!: ChartComponent;

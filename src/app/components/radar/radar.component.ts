@@ -17,9 +17,10 @@ export type ChartOptions = {
 };
 
 @Component({
-  selector: "app-radar",
-  templateUrl: "./radar.component.html",
-  styleUrls: ["./radar.component.scss"],
+    selector: "app-radar",
+    templateUrl: "./radar.component.html",
+    styleUrls: ["./radar.component.scss"],
+    standalone: false
 })
 export class RadarComponent {
   @ViewChild("chart") chart!: ChartComponent;

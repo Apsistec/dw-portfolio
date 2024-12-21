@@ -5,9 +5,10 @@ import { jobsData } from "./jobs-data";
 import { DetailsPage } from "src/app/details/details.page";
 
 @Component({
-  selector: "app-experience",
-  templateUrl: "./experience.component.html",
-  styleUrls: ["./experience.component.scss"],
+    selector: "app-experience",
+    templateUrl: "./experience.component.html",
+    styleUrls: ["./experience.component.scss"],
+    standalone: false
 })
 export class ExperienceComponent implements OnInit {
   jobs: Job[] = [];

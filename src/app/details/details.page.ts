@@ -4,9 +4,10 @@ import { ModalController } from "@ionic/angular";
 import { jobsData } from "../components/experience/jobs-data";
 
 @Component({
-  selector: "app-details",
-  templateUrl: "./details.page.html",
-  styleUrls: ["./details.page.scss"],
+    selector: "app-details",
+    templateUrl: "./details.page.html",
+    styleUrls: ["./details.page.scss"],
+    standalone: false
 })
 export class DetailsPage {
   @Input() selectedJob!: Job;
