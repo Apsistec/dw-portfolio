@@ -1,7 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { AlertController, ToastController } from "@ionic/angular";
-import { Functions, httpsCallable } from '@angular/fire/functions';
+import { AngularFireFunctions } from "@angular/fire/compat/functions";
 
 interface MessageResult {
   header: string;
@@ -9,10 +9,10 @@ interface MessageResult {
 }
 
 @Component({
-    selector: "app-contact",
-    templateUrl: "contact.page.html",
-    styleUrls: ["contact.page.scss"],
-    standalone: false
+  selector: "app-contact",
+  templateUrl: "contact.page.html",
+  styleUrls: ["contact.page.scss"],
+  standalone: false,
 })
 export class ContactPage {
   emailForm = new FormGroup({
@@ -35,16 +35,14 @@ export class ContactPage {
   res!: MessageResult;
 
   constructor(
-    private toastController: ToastController,
     private alert: AlertController,
-    private fun: Functions
+    private fns: AngularFireFunctions
   ) {}
-
+  private toastController = inject(ToastController);
+  
   async onSubmit() {
     if (this.emailForm.status === "INVALID") {
-      console.log(this.emailForm.status);
       const alert = await this.alert.create({
-        // subHeader: "Form Incomplete",
         message: "Please complete the form before you submit.",
         header: "Form Error",
         translucent: true,
@@ -63,12 +61,13 @@ export class ContactPage {
     } else if (this.emailForm.status === "VALID") {
       const controls = this.emailForm.value;
       try {
-        const submitEmailForm = this.fun.httpsCallable("sendMail");
-        await submitEmailForm({
+        this.isLoading = true;
+        const submitEmailForm = this.fns.httpsCallable("sendMail");
+        submitEmailForm({
           name: controls.name,
           email: controls.email,
           message: controls.message,
-        }).subscribe(async (res: MessageResult) => {
+        }).subscribe(async (res: any) => {
           const toaster = await this.toastController.create({
             header: res.header,
             message: res.message,
@@ -76,17 +75,20 @@ export class ContactPage {
             position: "middle",
             keyboardClose: true,
           });
-          await toaster.present;
-          await this.emailForm.reset();
+          await toaster.present();
+          this.emailForm.reset();
         });
       } catch (error: any) {
         console.log(error);
-        await this.emailForm.reset();
+        this.emailForm.reset();
         const alert = await this.alert.create({
-          header: error.header,
-          message: error.message,
+          header: error.header || "Error",
+          message:
+            error.message || "An error occurred while sending the message.",
         });
         await alert.present();
+      } finally {
+        this.isLoading = false;
       }
     }
   }

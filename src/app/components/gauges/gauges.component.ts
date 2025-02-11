@@ -2,16 +2,6 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { ChartComponent } from "ng-apexcharts";
 import { ThemeService } from "src/app/services/theme/theme.service";
 
-// export type ChartOptions = {
-//   series: ApexAxisChartSeries;
-//   chart: ApexChart;
-//   dataLabels: ApexDataLabels;
-//   plotOptions: ApexPlotOptions;
-//   xaxis: ApexXAxis;
-//   colors: string[];
-//   legend: ApexLegend;
-//   title: ApexTitleSubtitle;
-// };
 export type ChartOptions = {
   series: any;
   chart: any;

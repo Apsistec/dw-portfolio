@@ -11,8 +11,9 @@
     "logs": "firebase functions:log"
   },
   "engines": {
-    "node": "20"
+    "node": "22"
   },
+  "type": "module",
   "main": "lib/index.js",
   "dependencies": {
     "@sendgrid/mail": "^8.1.3",

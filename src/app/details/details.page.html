@@ -34,12 +34,12 @@
       </div>
       <ion-fab *ngIf="selectedJob.id > 1" edge="true" horizontal="start" vertical="center">
           <ion-fab-button size="small" (click)="previous(selectedJob)">
-            <ion-icon name="chevron-back"></ion-icon>
+            <ion-icon name="chevronBack"></ion-icon>
         </ion-fab-button>
       </ion-fab>
       <ion-fab *ngIf="selectedJob.id < jobs.length" edge="true" horizontal="end" vertical="center">
           <ion-fab-button size="small" (click)="next(selectedJob)">
-            <ion-icon  name="chevron-forward"></ion-icon>
+            <ion-icon  name="chevronForward"></ion-icon>
         </ion-fab-button>
       </ion-fab>
     </ion-card-content>

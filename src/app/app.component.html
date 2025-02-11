@@ -6,7 +6,7 @@
       <ion-title> Douglas White </ion-title>
       <ion-buttons slot="end">
         <ion-icon color="warning" name="sunny"></ion-icon>
-        <ion-toggle (ionChange)="toggleChange($event)" checked="palletToggle" class="toggle"></ion-toggle>
+        <ion-toggle (ionChange)="toggleChange($event)" [checked]="paletteToggle" class="toggle"></ion-toggle>
         <ion-icon style="padding-right: 10px" name="moon"></ion-icon>
       </ion-buttons>
     </ion-toolbar>

@@ -14,22 +14,19 @@
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "es2022",
-    "module": "es2020",
+    "module": "es2022",
     "lib": [
-      "es2018", 
+      "es2022", 
       "dom"
     ],
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true
   },
   "angularCompilerOptions": {
-    "optimizeDeps": {
-      "exclude": [
-        "ion-toast"
-      ]
-    },
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,

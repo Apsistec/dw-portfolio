@@ -3,10 +3,10 @@ import { ThemeService } from "../services/theme/theme.service";
 import { Subscription } from "rxjs";
 
 @Component({
-    selector: "app-resume",
-    templateUrl: "./resume.page.html",
-    styleUrls: ["./resume.page.scss"],
-    standalone: false
+  selector: "app-resume",
+  templateUrl: "./resume.page.html",
+  styleUrls: ["./resume.page.scss"],
+  standalone: false,
 })
 export class ResumePage implements OnInit, OnDestroy {
   isDark!: boolean | undefined;

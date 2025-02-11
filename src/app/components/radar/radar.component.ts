@@ -1,7 +1,5 @@
-import { style } from "@angular/animations";
 import { Component, ViewChild } from "@angular/core";
 import { ChartComponent } from "ng-apexcharts";
-import { map } from "rxjs";
 import { ThemeService } from "src/app/services/theme/theme.service";
 
 export type ChartOptions = {

@@ -8,13 +8,10 @@ import { ServiceWorkerModule } from "@angular/service-worker";
 import { TabsComponent } from "./tabs/tabs.component";
 import { NgxExtendedPdfViewerModule } from "ngx-extended-pdf-viewer";
 import { environment } from "src/environments/environment";
-import { initializeApp } from 'firebase/app';
-import { Firestore } from '@angular/fire/firestore';
-import { Functions } from '@angular/fire/functions';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { FIREBASE_OPTIONS } from '@angular/fire/compat';
-
-const app = initializeApp(environment.firebaseConfig);
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
+import { AngularFireFunctionsModule } from "@angular/fire/compat/functions";
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -28,14 +25,12 @@ const app = initializeApp(environment.firebaseConfig);
       registrationStrategy: "registerWhenStable:30000",
     }),
     NgxExtendedPdfViewerModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireFunctionsModule,
     BrowserAnimationsModule,
   ],
-  providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig },
-    Firestore,
-    Functions
-  ],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

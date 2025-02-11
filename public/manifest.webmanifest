@@ -1,6 +1,6 @@
 {
-  "name": "Douglas' Portfolio App",
-  "short_name": "Douglas' Portfolio",
+  "name": "Portfolio of Douglas White ",
+  "short_name": "Portfolio of D. White",
   "theme_color": "#00435e",
   "lang": "en-US",
   "dir": "ltr",
@@ -13,14 +13,14 @@
   "orientation": "portrait-primary",
   "screenshots": [
     {
-      "src": "assets/screenshots/portfolio-pwa.webp",
+      "src": "assets/screenshots/portfolio-pwa.png",
       "sizes": "1912x869",
       "type": "image/webp",
       "purpose": "any",
       "form_factor": "wide"
     },
     {
-      "src": "assets/screenshots/portfolio-mobile.webp",
+      "src": "assets/screenshots/portfolio-mobile.png",
       "sizes": "720x1470",
       "type": "image/webp",
       "purpose": "any"

@@ -1,0 +1,23 @@
+# Default access for all bots
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /manifest.webmanifest
+
+# Block service worker and asset access
+Disallow: /ngsw.json
+Disallow: /ngsw-worker.js
+Disallow: /safety-worker.js
+Disallow: /worker-basic.js
+Disallow: /assets/icons/
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Block common sensitive paths
+Disallow: /api/
+Disallow: /login
+Disallow: /profile
+Disallow: /*?*
+
+# Add sitemap if you have server-rendered content
+# Sitemap: https://douglaswhite.app/sitemap.xml

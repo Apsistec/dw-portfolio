@@ -30,8 +30,9 @@
                 <ion-icon slot="start" name="pencil" aria-hidden="true"></ion-icon>
               </ion-textarea>
               <div class="ion-text-center">
-                <ion-button type="submit" shape="round" color="primary" strong>
-                  Submit
+                <ion-button type="submit" shape="round" color="primary" strong [disabled]="isLoading">
+                  <ion-spinner *ngIf="isLoading"></ion-spinner>
+                  <span *ngIf="!isLoading">Send Message</span>
                 </ion-button>
               </div>
             </form>
